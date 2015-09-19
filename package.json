@@ -1,0 +1,33 @@
+{
+  "name": "formula-box",
+  "version": "0.0.1",
+  "description": "A box for all my functions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FormulaPages/box.git"
+  },
+  "keywords": [
+    "Spreadsheets",
+    "JavaScript"
+  ],
+  "author": "Peter Moresi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FormulaPages/box/issues"
+  },
+  "homepage": "https://github.com/FormulaPages/box#readme",
+  "dependencies": {
+    "formula-date-time": "0.0.1",
+    "formula-engineering": "0.0.1",
+    "formula-information": "0.0.1",
+    "formula-logical": "^1.0.1",
+    "formula-lookup-reference": "^1.0.3",
+    "formula-math": "0.0.1",
+    "formula-statistics": "0.0.1",
+    "formula-text": "0.0.1"
+  }
+}
