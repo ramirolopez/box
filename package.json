@@ -1,10 +1,12 @@
 {
   "name": "formula-box",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A box for all my functions.",
-  "main": "index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
-    "test": "mocha tests"
+    "test": "mocha tests",
+    "build:and": "echo and",
+    "build:address": "cat ADDRESS.js | babel -m umd > ../../address/ADDRESS.js"
   },
   "repository": {
     "type": "git",
@@ -20,14 +22,4 @@
     "url": "https://github.com/FormulaPages/box/issues"
   },
   "homepage": "https://github.com/FormulaPages/box#readme",
-  "dependencies": {
-    "formula-date-time": "0.0.1",
-    "formula-engineering": "0.0.1",
-    "formula-information": "0.0.1",
-    "formula-logical": "^1.0.1",
-    "formula-lookup-reference": "^1.0.3",
-    "formula-math": "0.0.1",
-    "formula-statistics": "0.0.1",
-    "formula-text": "0.0.1"
-  }
 }
