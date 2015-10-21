@@ -6,7 +6,12 @@
   "scripts": {
     "test": "mocha tests",
     "build:and": "echo and",
-    "build:address": "cat ADDRESS.js | babel -m umd > ../../address/ADDRESS.js"
+    "build:address": "cat src/ADDRESS.js | babel -m umd > ../address/ADDRESS.js",
+    "build:or": "cat src/OR.js | babel -m umd > ../or/OR.js",
+    "build:lt": "cat src/LT.js | babel -m umd > ../lt/LT.js",
+    "build:lte": "cat src/LTE.js | babel -m umd > ../lte/LTE.js",
+    "build:gt": "cat src/GT.js | babel -m umd > ../gt/GT.js",
+    "build:gte": "cat src/GTE.js | babel -m umd > ../gte/GTE.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +26,5 @@
   "bugs": {
     "url": "https://github.com/FormulaPages/box/issues"
   },
-  "homepage": "https://github.com/FormulaPages/box#readme",
+  "homepage": "https://github.com/FormulaPages/box#readme"
 }

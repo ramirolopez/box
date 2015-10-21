@@ -65,6 +65,12 @@ export default class RANGE {
     return INDEX2ROW(this.bottomRight);
   }
 
+  /* Returns an array with the data
+   */
+  data() {
+    return this.cells().map((n) => n.valueOf());
+  }
+
   /* Return a list of cells
    */
   cells() {

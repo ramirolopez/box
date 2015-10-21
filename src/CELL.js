@@ -26,4 +26,7 @@ export default class CELL {
     return INDEX2COL(this.cellIndex);
   }
 
+  valueOf() {
+    return sheet.data[this.cellIndex];
+  }
 }
