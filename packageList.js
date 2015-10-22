@@ -1,12 +1,18 @@
 export var logical = [
   'if',
+  'ifna',
+  'iferror',
   'and',
   'or',
+  'xor',
   'not',
   'lt',
   'lte',
   'gt',
   'gte',
+  'switch',
+  'choose',
+  'cond'
 ];
 
 export var reference = [
