@@ -1,5 +1,5 @@
 var test = require('tape');
-var or = require('./OR');
+var or = require('../src/OR');
 
 test('it should be this or that', function(t) {
   t.plan(5);
