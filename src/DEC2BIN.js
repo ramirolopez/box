@@ -1,5 +1,5 @@
 import REPT from './REPT';
-import error from './ERRORS';
+import error from './ERROR';
 
 // based on https://github.com/sutoiku/formula.js/blob/master/lib/engineering.js
 export default function DEC2BIN(input, places) {

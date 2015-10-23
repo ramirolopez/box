@@ -1,20 +1,16 @@
-var assert = require('assert');
+var test = require('tape');
 
-describe('DEC2BIN', function() {
+var DEC2BIN = require('../src/DEC2BIN');
+var error = require('../src/ERROR');
 
-  var DEC2BIN = require('./DEC2BIN');
-  var error = require('formula-errors');
-  
-  it('should convert decimal to binary', function() {
-    assert(DEC2BIN(9) === '1001');
-    assert(DEC2BIN(9, 4) === '1001');
-    assert(DEC2BIN(-100) === '1110011100');
-    assert(error.value === error.value);
-    assert(DEC2BIN(512) === error.num);
-    assert(DEC2BIN('a') === error.value);
-    assert(DEC2BIN(1, 'a') === error.value);
-    assert(DEC2BIN(1, -1) === error.num);
-    
-  });
-  
+test('should convert decimal to binary', function(t) {
+  t.plan(8)
+  t.equal(DEC2BIN(9), '1001');
+  t.equal(DEC2BIN(9, 4), '1001');
+  t.equal(DEC2BIN(-100), '1110011100');
+  t.equal(error.value, error.value);
+  t.equal(DEC2BIN(512), error.num);
+  t.equal(DEC2BIN('a'), error.value);
+  t.equal(DEC2BIN(1, 'a'), error.value);
+  t.equal(DEC2BIN(1, -1), error.num);
 });
