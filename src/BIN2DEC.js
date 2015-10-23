@@ -1,4 +1,4 @@
-import error from 'formula-errors';
+import error from './ERRORS';
 
 export default function BIN2DEC(value) {
     var valueAsString;

@@ -1,5 +1,5 @@
-import ISNUMBER from 'formula-isnumber';
-import error from 'formula-errors';
+import ISNUMBER from './ISNUMBER';
+import error from './ERRORS';
 
 export default function SIN(value) {
 

@@ -1,4 +1,4 @@
-import PMT from 'formula-pmt'
+import PMT from './PMT'
 
 export default {
   PMT: PMT

@@ -1,5 +1,5 @@
 
-import ISARRAY from 'formula-isarray';
+import ISARRAY from './ISARRAY';
 
 export default function FLATTEN(ref){
     return ref.reduce(function(a, b) {          

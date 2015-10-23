@@ -1,5 +1,5 @@
 
-import error from 'formula-errors';
+import error from './ERRORS';
 
 export default function ISERR(value) {
     if (typeof value === 'undefined' || value === null) { return false; }

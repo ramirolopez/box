@@ -1,4 +1,4 @@
-import error from 'formula-errors';
+import error from './ERRORS';
 
 export default function CHOOSE() {
   if (arguments.length < 2) {

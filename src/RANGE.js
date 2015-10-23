@@ -6,21 +6,15 @@
  */
 
 
-import CELLINDEX from 'formula-cellindex';
-import INDEX2COL from 'formula-index2col';
-import INDEX2ROW from 'formula-index2row';
-import INDIRECT from 'formula-indirect';
+import CELLINDEX from './CELLINDEX';
+import INDEX2COL from './INDEX2COL';
+import INDEX2ROW from './INDEX2ROW';
 
 export default class RANGE {
 
   /* The constructor captures top left and bottom right cell indexes.
    */
-  constructor(sheet, topLeft, bottomRight, name='') {
-    if (sheet.constructor.name !== 'SHEET') {
-      throw Error('sheet must be from SHEET constructor');
-    }
-
-    this.sheet = sheet;
+  constructor(topLeft, bottomRight, name='') {
     this.topLeft = topLeft;
     this.bottomRight = bottomRight;
     this.name = name;
@@ -68,17 +62,18 @@ export default class RANGE {
   /* Returns an array with the data
    */
   data() {
-    return this.cells().map((n) => n.valueOf());
+    return this.cells().map((n) => n ? n.valueOf() : undefined );
   }
 
   /* Return a list of cells
    */
   cells() {
     var start = typeof this.topLeft === 'function' ? this.topLeft() : this.topLeft,
-        end = typeof this.bottomRight === 'function' ? this.bottomRight() : this.bottomRight;
+        end = typeof this.bottomRight === 'function' ? this.bottomRight() : this.bottomRight,
+	that = this;
     
     return Array.apply(start, Array(end+1)).map(function (x, y) {
-      return INDIRECT.apply(this.sheet, [y] );
+      return y; 
     });
   }
 
@@ -88,7 +83,7 @@ export default class RANGE {
     var self = this;
     return Array.apply(this.topRow(), Array(this.bottomRow()+1)).map(function (x, row) {
       return Array.apply(self.topColumn(), Array(self.bottomColumn()+1)).map(function (x, col) {
-        return INDIRECT.apply(this.sheet, [CELLINDEX(col, row)] );
+        return [CELLINDEX(col, row)];
       })
     })
   }

@@ -1,5 +1,5 @@
 
-import FLATTEN from 'formula-flatten';
+import FLATTEN from './FLATTEN';
 
 export default function AND() {
       var result = true;

@@ -1,4 +1,4 @@
-import FLATTEN from 'formula-flatten';
+import FLATTEN from './FLATTEN';
 
 export default function OR() {
   return FLATTEN(arguments).reduce( (a, b) => {

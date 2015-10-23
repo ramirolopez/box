@@ -1,8 +1,8 @@
-import RANGE from 'formula-range';
+import RANGE from './RANGE';
 
 export default function LT(a,b) {
-  var aIsRange = a.constructor.name === 'RANGE',
-      bIsRange = b.constructor.name === 'RANGE';
+  var aIsRange = (a.constructor.name === 'RANGE'),
+      bIsRange = (b.constructor.name === 'RANGE');
 
   if ( aIsRange && bIsRange  ) {
     return error.na;

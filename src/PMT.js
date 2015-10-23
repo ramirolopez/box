@@ -1,5 +1,5 @@
-import isnumber from 'formula-isnumber';
-import error from 'formula-errors';
+import isnumber from './ISNUMBER';
+import error from './ERRORS';
 
 export default function PMT(rate, periods, present, future = 0, type = 0) {
 

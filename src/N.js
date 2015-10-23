@@ -1,6 +1,6 @@
-import ISNUMBER from 'formula-isnumber';
-import ISERROR from 'formula-iserror';
-import SERIAL from 'formula-serial';
+import ISNUMBER from './ISNUMBER';
+import ISERROR from './ISERROR';
+import SERIAL from './SERIAL';
 
 export default function N(value) {
   if (ISNUMBER(value)) {

@@ -1,12 +1,12 @@
-import IF from 'formula-if';
-import IFERROR from 'formula-iferror';
-import IFNA from 'formula-ifna';
-import AND from 'formula-and';
-import OR from 'formula-or';
-import XOR from 'formula-xor';
-import CHOOSE from 'formula-choose';
-import SWITCH from 'formula-switch';
-import COND from 'formula-cond';
+import IF from './IF';
+import IFERROR from './IFERROR';
+import IFNA from './IFNA';
+import AND from './AND';
+import OR from './OR';
+import XOR from './XOR';
+import CHOOSE from './CHOOSE';
+import SWITCH from './SWITCH';
+import COND from './COND';
 
 export default {
     IF,

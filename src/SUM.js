@@ -1,5 +1,5 @@
 
-import FLATTEN from 'formula-flatten';
+import FLATTEN from './FLATTEN';
 
 export default function SUM() {
     var numbers = FLATTEN(arguments);

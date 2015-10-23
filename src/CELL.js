@@ -1,5 +1,5 @@
-import INDEX2COL from 'formula-index2col';
-import INDEX2ROW from 'formula-index2row';
+import INDEX2COL from './INDEX2COL';
+import INDEX2ROW from './INDEX2ROW';
 
 /* Structure for CELL reference
  */

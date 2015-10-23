@@ -1,8 +1,8 @@
 /* Returns a cell indirection
  */
-import CELL from 'formula-cell';
+import CELL from './CELL';
 
-export function INDIRECT(ref) {
+export default function INDIRECT(ref) {
   console.log( this )
-  return CELL.apply(this, [ref]);
+  return new CELL(this, ref.index);
 }

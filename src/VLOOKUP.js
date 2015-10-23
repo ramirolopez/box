@@ -1,7 +1,7 @@
 
-import ISERROR from 'formula-iserror';
-import ISBLANK from 'formula-isblank';
-import error from 'formula-errors';
+import ISERROR from './ISERROR';
+import ISBLANK from './ISBLANK';
+import error from './ERRORS';
 
 export default function VLOOKUP(needle, table, index, exactmatch) {             
 

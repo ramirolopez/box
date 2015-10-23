@@ -1,5 +1,5 @@
 
-import ISBLANK from 'formula-isblank';
+import ISBLANK from './ISBLANK';
 
 export default function HLOOKUP(needle, table, index, exactmatch) {
     if (typeof needle === "undefined" || ISBLANK(needle)) {

@@ -1,4 +1,4 @@
-import RANGE from 'formula-range';
+import RANGE from './RANGE';
 
 export default function GT(a,b) {
   var aIsRange = a.constructor.name === 'RANGE',
