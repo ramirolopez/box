@@ -1,15 +1,13 @@
-var assert = require('assert');
-var cell = require('./CELL');
-var sheet = require('formula-sheet');
+var test = require('tape');
+var cell = require('../src/CELL');
+var c = new cell(0);
 
-describe('cell', function() {
-  it('should accept a sheet and a cell index', function() {
-    var c = new cell(new sheet(), 0);
-    assert( c.index === 0 );
-    c = new cell(new sheet(), 100);
-    assert( c.index === 100 );
-  });
-  it('should error on non-sheet object', function() {
-    assert.throws( function() { new cell('invalid', 0) } );
-  });
+test('cell', function(t) {
+  t.plan(3);
+
+  t.equal( c.index, 0 );
+  c = new cell(100);
+  t.equal( c.index, 100 );
+  t.throws( new cell('foo') );
+
 });

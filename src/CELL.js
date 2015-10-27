@@ -7,26 +7,20 @@ export default class CELL {
 
   /* Accepts a reference to sheet and cell index
    */
-  constructor(sheet, index) {
-    if (sheet.constructor.name !== 'SHEET') {
-      throw Error('sheet is expected to be SHEET class');
-    }
-    
-    this.sheet = sheet;
+  constructor(index) {
     this.index = index;
   }
 
-  /* Returns object with row/col
+  /* Returns rowIndex 
    */
   getRow() {
-    return INDEX2ROW(this.cellIndex);
+    return INDEX2ROW(this.index);
   }
 
+  /* Return columnIndex
+   */
   getColumn() {
-    return INDEX2COL(this.cellIndex);
+    return INDEX2COL(this.index);
   }
 
-  valueOf() {
-    return sheet.data[this.cellIndex];
-  }
 }
