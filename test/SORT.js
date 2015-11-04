@@ -2,7 +2,7 @@ var test = require('tape');
 var sort = require('../src/SORT');
 
 test('it should be this sort that', function(t) {
-  t.plan(3);
+  t.plan(4);
   var a1 = [4, 3, 2, 1].map( n => [n, -n*n, n*n*n]);
 
   t.deepEqual( sort( a1,  1, true ), [
@@ -25,5 +25,19 @@ test('it should be this sort that', function(t) {
     [2, -4, 8],
     [1, -1, 1],
   ]);
+
+  var a2 = [
+    ['b', 'a']
+    ['a', 'b'],
+    ['a', 'a']
+    ['b', 'b']
+  ]
+
+  t.deepEqual( sort( a2, 1, true, 2, true ), [
+    ['a', 'a']
+    ['a', 'b'],
+    ['b', 'a']
+    ['b', 'b']
+  ] )
 
 });
