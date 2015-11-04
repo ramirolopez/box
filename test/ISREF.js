@@ -1,15 +1,9 @@
-var assert = require('assert');
-var range = require('formula-range')
-var cell = require('formula-cell')
-var sheet = require('formula-sheet')
-var mySheet = new sheet()
+var test = require('tape');
+var Range = require('formula-range');
+var Cell = require('formula-cell');
 var isref = require('./ISREF');
 
-describe('isref', function() {
-  it('should identify range as ref', function() {
-    assert( isref( new range(mySheet, 0, 1) ) );
-  })
-  it('should identify cell as ref', function() {
-    assert( isref( new cell(mySheet, 1) ) );
-  })
-})
+test('isref', function(t) {
+  t.equal( isref( new Range(0, 1) ) );
+  t.equal( isref( new Cell(1) ) );
+});
