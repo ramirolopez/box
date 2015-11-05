@@ -4,7 +4,7 @@
   "description": "A box for all my functions.",
   "jsnext:main": "src/index.js",
   "scripts": {
-    "test": "./run-tests.sh",
+    "test": "faucet `find test -name '*.js'`",
     "test:abs": "babel-node test/ABS",
     "test:accrintm": "babel-node test/ACCRINTM",
     "test:acos": "babel-node test/ACOS",
@@ -113,6 +113,7 @@
     "test:fisher": "babel-node test/FISHER",
     "test:fisherinv": "babel-node test/FISHERINV",
     "test:fixed": "babel-node test/FIXED",
+    "test:flatten": "babel-node test/FLATTEN",
     "test:floor": "babel-node test/FLOOR",
     "test:forecast": "babel-node test/FORECAST",
     "test:frequency": "babel-node test/FREQUENCY",
@@ -392,6 +393,7 @@
     "build:fisher": "babel src/FISHER.js -m umd -o ../fisher/FISHER.js",
     "build:fisherinv": "babel src/FISHERINV.js -m umd -o ../fisherinv/FISHERINV.js",
     "build:fixed": "babel src/FIXED.js -m umd -o ../fixed/FIXED.js",
+    "build:flatten": "babel src/FLATTEN.js -m umd -o ../flatten/FLATTEN.js",
     "build:floor": "babel src/FLOOR.js -m umd -o ../floor/FLOOR.js",
     "build:forecast": "babel src/FORECAST.js -m umd -o ../forecast/FORECAST.js",
     "build:frequency": "babel src/FREQUENCY.js -m umd -o ../frequency/FREQUENCY.js",
@@ -581,6 +583,7 @@
   "devDependencies": {
     "babelify": "^6.4.0",
     "eslint": "^1.8.0",
+    "faucet": "0.0.1",
     "tape": "^4.2.2",
     "testling": "^1.7.1"
   },
