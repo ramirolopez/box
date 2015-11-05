@@ -14,7 +14,7 @@ test('LT', function(t) {
   t.equal( LT(200, 800), true );
   t.equal( LT(20000000, 40000000), true );
 
-  t.equal.deepEqual( LT( r, 5 ), [
+  t.deepEqual( LT( r, 5 ), [
     true,
     true,
     true,

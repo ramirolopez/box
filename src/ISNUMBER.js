@@ -1,4 +1,4 @@
 
-export default function isNumber(value) {
+export default function(value) {
     return typeof(value) === 'number' && !isNaN(value) && isFinite(value);
 }

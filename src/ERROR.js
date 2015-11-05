@@ -14,15 +14,15 @@ var nil = new Error('#NULL!'),
     unknown = new Error('#UNKNOWN');
 
 export default {
-  nil:  nil,
-  div0: div0,
-  value: value,
-  ref: ref,
-  name: name,
-  num: num,
-  na: na,
-  error: error,
-  data: data,
-  missing: missing,
-  unknown: unknown
+  nil,
+  div0,
+  value,
+  ref,
+  name,
+  num,
+  na,
+  error,
+  data,
+  missing,
+  unknown
 }

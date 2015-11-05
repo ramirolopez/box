@@ -15,6 +15,30 @@ export var logical = [
   'cond'
 ];
 
+export var information = [
+  'isarray',
+  'isblank',
+  'isemail',
+  'iserror',
+  'iseven',
+  'isformula',
+  'islogical',
+  'isna',
+  'isnontext',
+  'isnumber',
+  'isodd',
+  'istext',
+  'isrange',
+  'isref',
+  'isurl',
+  'n',
+  'na',
+  'precedents',
+  'sheet',
+  'sheets',
+  'type'
+]
+
 export var reference = [
   'indirect',
   'isref',
@@ -33,7 +57,7 @@ export var data = [
   'filter',
   'unique',
 ];
-  
+
 export var math = [
   'abs',
   'acos',
@@ -305,11 +329,12 @@ export var engineering = [
   'imtan',
   'oct2bin',
   'oct2dec',
-  'oct2hex' 
+  'oct2hex'
 ];
 
 export var packages = [
   logical,
+  information,
   reference,
   data,
   math,

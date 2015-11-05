@@ -1,9 +1,7 @@
-var date = require('./DATE');
-var assert = require('assert');
+var date = require('../src/DATE');
+var test = require('tape');
 
-describe('date', function() {
-  it('should return a serial number', function() {
-    assert( date(2008,1,1) === 39448 );
-  });
-})
-  
+test('should return a serial number', function(t) {
+  t.plan(1)
+  t.equal( date(2008,1,1),39448 );
+});

@@ -1,6 +1,6 @@
 var abs = require('../src/ABS');
 var test = require('tape');
-var error = require('./ERRORS');
+var error = require('../src/ERROR');
 
 test('should convert number to absolute value', function(t) {
   t.plan(6)

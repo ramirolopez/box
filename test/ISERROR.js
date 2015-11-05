@@ -1,22 +1,20 @@
-var iserror = require('./ISERROR');
-var assert = require('assert');
+var iserror = require('../src/ISERROR');
 var error = require('formula-errors');
+var test = require('tape');
 
-describe('iserror', function() {
-  it('should identify errors; excluding NA', function() {
-    assert( iserror(0) === false, '0 is not an error');
-    assert( iserror(1) === false, '1 is not an error');
-    assert( iserror('Hello') === false, '"Hello" is not an error');
-    assert( iserror(error.nil), 'Should be error');
-    assert( iserror(error.value), 'Should be error');
-    assert( iserror(error.ref), 'Should be error');
-    assert( iserror(error.name), 'Should be error');
-    assert( iserror(error.num), 'Should be error');
-    assert( iserror(error.na), 'Should be error');
-    assert( iserror(error.error), 'Should be error');
-    assert( iserror(error.data), 'Should be error');
-    assert( iserror(error.missing), 'Should be error');
-    assert( iserror(error.unknown), 'Should be error');
-  });
-})
-  
+test('should identify errors; excluding NA', function(t) {
+  t.plan(13)
+  t.equal( iserror(0), false, '0 is not an error');
+  t.equal( iserror(1), false, '1 is not an error');
+  t.equal( iserror('Hello'), false, '"Hello" is not an error');
+  t.equal( iserror(error.nil), true, 'Should be error');
+  t.equal( iserror(error.value), true, 'Should be error');
+  t.equal( iserror(error.ref), true, 'Should be error');
+  t.equal( iserror(error.name), true, 'Should be error');
+  t.equal( iserror(error.num), true, 'Should be error');
+  t.equal( iserror(error.na), true, 'Should be error');
+  t.equal( iserror(error.error), true, 'Should be error');
+  t.equal( iserror(error.data), true, 'Should be error');
+  t.equal( iserror(error.missing), true, 'Should be error');
+  t.equal( iserror(error.unknown), true, 'Should be error');
+});

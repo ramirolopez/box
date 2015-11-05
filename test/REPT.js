@@ -1,9 +1,9 @@
 var assert = require('assert');
-var REPT = require('./REPT');
+var REPT = require('../src/REPT');
+var test = require('tape');
 
-describe('REPT', function() {
-  it('should repeat a text pattern n times', function() {
-    assert( REPT('-*', 3) === '-*-*-*' ); 
-    assert( REPT('repeat ', 5) === 'repeat repeat repeat repeat repeat ' ); 
-  }); 
+test('should repeat a text pattern n times', function(t) {
+  t.plan(2)
+  t.equal( REPT('-*', 3), '-*-*-*' );
+  t.equal( REPT('repeat ', 5), 'repeat repeat repeat repeat repeat ' );
 });
