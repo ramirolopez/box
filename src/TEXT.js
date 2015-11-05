@@ -5,7 +5,7 @@ import { d1900, JulianOffset, MinutesInHour, MinutesInDay, SecondsInMinute,
          SecondsInDay, SecondsInHour, DaysInYear, MillisecondsInDay, AllowedDays, DayNames,
          DayNames3, MonthNames, MonthNames3, AM, AM1, PM, PM1, DefaultCurrency,
          SeparatorChar, DecimalChar, AllowedColors }
-from 'formula-constants';
+from './CONSTANTS';
 
 let FormatNumber = {};
 

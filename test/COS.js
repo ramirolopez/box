@@ -1,11 +1,10 @@
-var cos = require('./COS');
-var assert = require('assert');
-var error = require('formula-errors');
+var cos = require('../src/COS');
+var error = require('../src/ERROR');
+var test = require('tape');
 
-describe('cos', function() {
-  it('should calculate the inverse cosine', function() {
-    assert( cos(0) === 1 );
-    assert( cos(NaN) === error.value );
-    assert( cos('invalid') === error.value );
-  });
+test('should calculate the inverse cosine', function(t) {
+  t.plan(3);
+  t.equal( cos(0), 1 );
+  t.equal( cos(NaN), error.value );
+  t.equal( cos('invalid'), error.value );
 })

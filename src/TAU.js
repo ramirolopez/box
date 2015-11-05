@@ -1,3 +1,5 @@
-export default function TAU() {
-  return 2 * Math.PI;
+// Returns the universal circle constant
+import {TAU} from './CONSTANTS'
+export default function() {
+  return TAU;
 }

@@ -588,8 +588,5 @@
     "testling": "^1.7.1"
   },
   "dependencies": {
-    "bessel": "^0.2.0",
-    "formula-constants": "^1.0.3",
-    "jStat": "^1.4.6"
   }
 }

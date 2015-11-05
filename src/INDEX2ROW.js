@@ -1,5 +1,6 @@
-import {MAX_COLS} from 'formula-constants';
+/* Isolate the row from a cell index */
+import {MAX_COLS} from './CONSTANTS';
 
-export default function INDEX2ROW(index) {
+export default function(index) {
   return Math.floor(index / MAX_COLS);
 }
