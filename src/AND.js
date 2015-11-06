@@ -1,12 +1,12 @@
-
-import FLATTEN from './FLATTEN';
-
+// Logical AND reduction
+//
+// Author: Peter Moresi
+//
+// Any list of criteria can be flattened out to a truthy value.
 export default function AND(...criteria) {
-      var result = true;
-      var list = FLATTEN(criteria);
-      for (var i = 0; i < list.length; i++) {
-          result = result && criteria[i];
-          if (!result) return false;
-      }
-      return true;
-  }
+  return criteria.reduce( (previousValue, currentValue) => {
+    // no, I didn't forget about ===. I explicitly want to use JS type coersion.
+    if (previousValue == false) return false
+    return currentValue;
+  }, true);
+}

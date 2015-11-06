@@ -1,7 +1,9 @@
-import FLATTEN from './FLATTEN';
+// Logical OR operation
 
 export default function OR(...criteria) {
-  return FLATTEN(criteria).reduce( (a, b) => {
-    return (a || b);
-  })
+  return criteria.reduce( (a, b) => {
+    // I didn't forget about ===. I want to use JS type coersion.
+    if (a == true) return true;
+    return b;
+  }, false)
 }
