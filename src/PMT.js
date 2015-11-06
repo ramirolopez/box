@@ -1,5 +1,5 @@
 import isnumber from './ISNUMBER';
-import error from './ERRORS';
+import error from './ERROR';
 
 export default function PMT(rate, periods, present, future = 0, type = 0) {
 

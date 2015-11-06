@@ -1,10 +1,8 @@
-var test = require('tape');
-var LT = require('../src/LT');
-var range = require('../src/RANGE');
-var sheet = require('../src/SHEET');
+import test from 'tape';
+import LT from '../lib/LT';
+import range from '../lib/RANGE';
 
-var s = new sheet();
-var r = new range( s, 0, 10);
+var r = new range( 0, 10 );
 
 test('LT', function(t) {
 

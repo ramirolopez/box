@@ -1,12 +1,9 @@
-var test = require('tape');
-
-var LTE = require('../src/LTE');
+import test from 'tape';
+import range from '../lib/RANGE';
+import LTE from '../lib/LTE';
 
 test('Should compare two values and return true or false', function(t) {
 
-
-  var range = require('formula-range');
-  var sheet = require('formula-sheet');
   var r = new range( 0, 10);
 
   t.plan(4)

@@ -1,5 +1,5 @@
-var test = require('tape');
-var or = require('../src/OR');
+import test from 'tape';
+import or from '../lib/OR';
 
 test('it should be this or that', function(t) {
   t.plan(5);

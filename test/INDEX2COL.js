@@ -1,6 +1,6 @@
-var INDEX2COL = require('../src/INDEX2COL');
-var error = require('formula-errors');
-var test = require('tape');
+import INDEX2COL from '../lib/INDEX2COL';
+import error from '../lib/ERROR';
+import test from 'tape';
 
 test('should convert row and column to number', function(t) {
   t.plan(3)

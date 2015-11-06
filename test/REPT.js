@@ -1,6 +1,6 @@
-var assert = require('assert');
-var REPT = require('../src/REPT');
-var test = require('tape');
+import assert from 'assert';
+import REPT from '../lib/REPT';
+import test from 'tape';
 
 test('should repeat a text pattern n times', function(t) {
   t.plan(2)

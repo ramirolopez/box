@@ -1,5 +1,5 @@
-var test = require('tape');
-var BIN2DEC = require('./BIN2DEC');
+import test from 'tape';
+import BIN2DEC from '../lib/BIN2DEC';
 
 test('it should be there when you require it', function (t) {
 

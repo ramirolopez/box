@@ -1,4 +1,4 @@
-import error from './ERRORS';
+import error from './ERROR';
 
 export default function CHOOSE() {
   if (arguments.length < 2) {

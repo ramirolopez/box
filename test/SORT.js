@@ -1,5 +1,5 @@
-var test = require('tape');
-var sort = require('../src/SORT');
+import test from 'tape';
+import sort from '../lib/SORT';
 
 test('it should be this sort that', function(t) {
   t.plan(4);

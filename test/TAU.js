@@ -1,10 +1,8 @@
-var assert = require('assert');
-describe('TAU', function() {
+import tan from '../lib/TAN'
+import error from '../lib/ERROR'
+import test from 'tape'
+import TAU from './TAU';
 
-  var TAU = require('./TAU');
-  
-  it('should be 2PI', function() {
-    assert( TAU() === 2*Math.PI, 'Should be 2PI' );
-  });
-
+test('should be 6.28...', function(t) {
+  t.equal( TAU(), 6.28318530717958, 'Should be 2PI' );
 });

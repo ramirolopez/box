@@ -1,5 +1,5 @@
 import test from 'tape'
-import and from '../src/AND'
+import and from '../lib/AND'
 
 test('it be an exclusive and', (t) => {
   t.plan(5)

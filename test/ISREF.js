@@ -1,7 +1,7 @@
-var test = require('tape');
-var Range = require('formula-range');
-var Cell = require('formula-cell');
-var isref = require('./ISREF');
+import test from 'tape';
+import Range from '../lib/RANGE';
+import Cell from '../lib/CELL';
+import isref from '../lib/ISREF';
 
 test('isref', function(t) {
   t.plan(2)

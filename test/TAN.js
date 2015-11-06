@@ -1,12 +1,10 @@
-var tan = require('./TAN');
-var assert = require('assert');
-var error = require('formula-errors');
+import tan from '../lib/TAN'
+import error from '../lib/ERROR'
+import test from 'tape'
 
-describe('tan', function() {
-  it('should calculate the inverse tanine', function() {
-    assert( tan(0) === 0 );
-    assert( tan(1) === 1.5574077246549023 );
-    assert( tan(NaN) === error.value );
-    assert( tan('invalid') === error.value );
-  });
-})
+test('should calculate the inverse tanine', function(t) {
+  t.equal( tan(0), 0 );
+  t.equal( tan(1), 1.5574077246549023 );
+  t.equal( tan(NaN), error.value );
+  t.equal( tan('invalid'), error.value );
+});

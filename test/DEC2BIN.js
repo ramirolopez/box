@@ -1,7 +1,7 @@
-var test = require('tape');
+import test from 'tape';
 
-var DEC2BIN = require('../src/DEC2BIN');
-var error = require('../src/ERROR');
+import DEC2BIN from '../lib/DEC2BIN';
+import error from '../lib/ERROR';
 
 test('should convert decimal to binary', function(t) {
   t.plan(8)

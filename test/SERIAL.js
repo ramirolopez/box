@@ -1,5 +1,5 @@
-var serial = require('../src/SERIAL');
-var test = require('tape');
+import serial from '../lib/SERIAL';
+import test from 'tape';
 
 test('should convert a date to a number', function(t) {
   t.plan(5)

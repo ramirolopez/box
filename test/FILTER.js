@@ -3,7 +3,7 @@
  */
 
 import test from 'tape';
-import filter from '../src/FILTER'
+import filter from '../lib/FILTER'
 
 test('FILTER', (t) => {
   t.plan(3)

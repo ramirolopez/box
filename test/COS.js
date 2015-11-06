@@ -1,6 +1,6 @@
-var cos = require('../src/COS');
-var error = require('../src/ERROR');
-var test = require('tape');
+import cos from '../lib/COS';
+import error from '../lib/ERROR';
+import test from 'tape';
 
 test('should calculate the inverse cosine', function(t) {
   t.plan(3);

@@ -1,6 +1,6 @@
-var INDEX2ROW = require('../src/INDEX2ROW');
-var error = require('formula-errors');
-var test = require('tape')
+import INDEX2ROW from '../lib/INDEX2ROW';
+import error from '../lib/ERROR';
+import test from 'tape';
 
 test('index2row', function(t) {
     t.equal( INDEX2ROW(0), 0, 'should be 0');

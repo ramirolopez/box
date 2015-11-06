@@ -1,4 +1,4 @@
-import error from './ERRORS';
+import error from './ERROR';
 
 export default function BIN2DEC(value) {
     var valueAsString;

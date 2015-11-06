@@ -1,6 +1,6 @@
-var acos = require('./ACOS');
-var error = require('formula-errors');
-var test = require('tape');
+import acos from '../lib/ACOS';
+import error from '../lib/ERROR';
+import test from 'tape';
 
 test('should calculate the inverse cosine', function(t) {
   t.plan(3)

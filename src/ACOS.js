@@ -1,5 +1,5 @@
 import ISNUMBER from './ISNUMBER';
-import error from './ERRORS';
+import error from './ERROR';
 
 export default function ACOS(value) {
 

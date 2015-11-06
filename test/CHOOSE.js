@@ -1,6 +1,6 @@
-var error = require('formula-errors');
-var test = require('tape')
-var CHOOSE = require('./CHOOSE');
+import error from '../lib/ERROR';
+import test from 'tape';
+import CHOOSE from '../lib/CHOOSE';
 
 test('it should choose n alternative', function (t) {
 

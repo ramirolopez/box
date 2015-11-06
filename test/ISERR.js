@@ -1,6 +1,6 @@
-var iserr = require('../src/ISERR');
-var error = require('../src/ERROR');
-var test = require('tape');
+import iserr from '../lib/ISERR';
+import error from '../lib/ERROR';
+import test from 'tape';
 
 test('should return true if value is error', function(t) {
   t.plan(16)

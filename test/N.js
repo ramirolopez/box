@@ -1,6 +1,6 @@
-var n = require('../src/N');
-var error = require('../src/ERROR');
-var test = require('tape');
+import n from '../lib/N';
+import error from '../lib/ERROR';
+import test from 'tape';
 
 test('should convert value to number', function(t) {
   t.plan(6)

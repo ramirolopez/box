@@ -1,6 +1,6 @@
-var iserror = require('../src/ISERROR');
-var error = require('formula-errors');
-var test = require('tape');
+import iserror from '../lib/ISERROR';
+import error from '../lib/ERROR';
+import test from 'tape';
 
 test('should identify errors; excluding NA', function(t) {
   t.plan(13)

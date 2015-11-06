@@ -1,5 +1,6 @@
-var test = require('tape');
-var cell = require('../src/CELL');
+import test from 'tape';
+import cell from '../lib/CELL';
+
 var c = new cell(0);
 
 test('cell', function(t) {

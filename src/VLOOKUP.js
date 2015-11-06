@@ -1,7 +1,7 @@
 
 import ISERROR from './ISERROR';
 import ISBLANK from './ISBLANK';
-import error from './ERRORS';
+import error from './ERROR';
 
 export default function VLOOKUP(needle, table, index, exactmatch) {             
 

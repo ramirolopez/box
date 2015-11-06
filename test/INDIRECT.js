@@ -2,7 +2,7 @@
  * turn an address or cell index into a reference
  * assumes that `this` references the current sheet.
  */
-var test = require('tape')
+import test from 'tape'
 
 test('should return a cell reference', function(t) {
 

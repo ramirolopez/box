@@ -1,5 +1,5 @@
-var isnumber = require('../src/ISNUMBER');
-var test = require('tape')
+import isnumber from '../lib/ISNUMBER';
+import test from 'tape';
 
 test('should identify numbers', function(t) {
   t.plan(7)

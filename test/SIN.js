@@ -1,11 +1,9 @@
-var sin = require('./SIN');
-var assert = require('assert');
-var error = require('formula-errors');
+import sin from '../lib/SIN'
+import error from '../lib/ERROR'
+import test from 'tape'
 
-describe('sin', function() {
-  it('should calculate the inverse sinine', function() {
-    assert( sin(0) === 0 );
-    assert( sin(NaN) === error.value );
-    assert( sin('invalid') === error.value );
-  });
+test('should calculate the inverse sinine', function(t) {
+  t.equal( sin(0), 0 )
+  t.equal( sin(NaN), error.value )
+  t.equal( sin('invalid'), error.value )
 })

@@ -1,5 +1,5 @@
-var test = require('tape');
-var isfunc = require('../src/ISFUNCTION');
+import test from 'tape';
+import isfunc from '../lib/ISFUNCTION';
 
 test('Function check', function(t) {
   t.plan(5);

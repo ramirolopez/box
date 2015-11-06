@@ -1,6 +1,6 @@
-var CELLINDEX = require('../src/CELLINDEX');
-var error = require('formula-errors');
-var test = require('tape');
+import CELLINDEX from '../lib/CELLINDEX';
+import error from '../lib/ERROR';
+import test from 'tape';
 
 test('should convert row and column to number', function(t) {
   t.plan(3)

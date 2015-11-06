@@ -1,5 +1,5 @@
-var date = require('../src/DATE');
-var test = require('tape');
+import date from '../lib/DATE';
+import test from 'tape';
 
 test('should return a serial number', function(t) {
   t.plan(1)

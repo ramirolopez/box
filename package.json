@@ -4,7 +4,7 @@
   "description": "A box for all my functions.",
   "jsnext:main": "src/index.js",
   "scripts": {
-    "test": "babel-tape-runner",
+    "test": "babel-tape-runner test/*.js",
     "build": "make"
   },
   "repository": {
@@ -22,10 +22,16 @@
   },
   "homepage": "https://github.com/FormulaPages/box#readme",
   "devDependencies": {
-    "babel-core": "^6.0.20",
+    "babel-core": "^6.1.2",
+    "babel-preset-es2015": "^6.1.2",
     "babel-tape-runner": "^1.3.0",
-    "babelify": "^6.4.0",
+    "babelify": "^7.2.0",
     "eslint": "^1.8.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.0",
+    "gulp-tape": "0.0.5",
+    "tap": "^2.2.0",
+    "tap-colorize": "^1.2.0",
     "tape": "^4.2.2"
   },
   "dependencies": {}

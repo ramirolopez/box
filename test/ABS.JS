@@ -1,6 +1,6 @@
-var abs = require('../src/ABS');
-var test = require('tape');
-var error = require('../src/ERROR');
+import abs from '../lib/ABS';
+import test from 'tape';
+import error from '../lib/ERROR';
 
 test('should convert number to absolute value', function(t) {
   t.plan(6)
