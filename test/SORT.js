@@ -1,5 +1,5 @@
 import test from 'tape';
-import sort from '../lib/SORT';
+import {sort} from '../src/SORT';
 
 test('it should be this sort that', function(t) {
   t.plan(4);

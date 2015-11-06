@@ -6,9 +6,9 @@
  */
 
 
-import CELLINDEX from './CELLINDEX';
-import INDEX2COL from './INDEX2COL';
-import INDEX2ROW from './INDEX2ROW';
+import {CELLINDEX} from './CELLINDEX';
+import {INDEX2COL} from './INDEX2COL';
+import {INDEX2ROW} from './INDEX2ROW';
 
 export default class RANGE {
 

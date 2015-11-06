@@ -1,7 +1,7 @@
 import test from 'tape';
-import BIN2DEC from '../lib/BIN2DEC';
+import {BIN2DEC} from '../src/BIN2DEC';
 
-test('it should be there when you require it', function (t) {
+test('BIN2DEC', function (t) {
 
   t.plan(7)
   t.equal( BIN2DEC('00000000'), 0);

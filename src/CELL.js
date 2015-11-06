@@ -1,26 +1,20 @@
-import INDEX2COL from './INDEX2COL';
-import INDEX2ROW from './INDEX2ROW';
+import {INDEX2COL} from './INDEX2COL';
+import {INDEX2ROW} from './INDEX2ROW';
 
 /* Structure for CELL reference
- */
-export default class CELL {
+*/
+export function CELL(index) {
+  return {
+    /* Returns rowIndex
+    */
+    getRow: function() {
+      return INDEX2ROW(index);
+    },
 
-  /* Accepts a reference to sheet and cell index
-   */
-  constructor(index) {
-    this.index = index;
+    /* Return columnIndex
+    */
+    getColumn: function() {
+      return INDEX2COL(index);
+    }
   }
-
-  /* Returns rowIndex 
-   */
-  getRow() {
-    return INDEX2ROW(this.index);
-  }
-
-  /* Return columnIndex
-   */
-  getColumn() {
-    return INDEX2COL(this.index);
-  }
-
 }

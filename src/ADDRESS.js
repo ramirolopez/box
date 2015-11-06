@@ -1,5 +1,5 @@
 /* Convert a row & column into an address */
-export default function ADDRESS(row, col, absolute_relative_mode, use_a1_notation, sheet) {
+export function ADDRESS(row, col, absolute_relative_mode, use_a1_notation, sheet) {
 
   /* Convert Column to Index (e.g A -> 1) */
   function toColumn( column_index ) {

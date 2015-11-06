@@ -1,5 +1,5 @@
-import CELLINDEX from '../lib/CELLINDEX';
-import error from '../lib/ERROR';
+import {CELLINDEX} from '../src/CELLINDEX';
+import {ERROR} from '../src/ERROR';
 import test from 'tape';
 
 test('should convert row and column to number', function(t) {

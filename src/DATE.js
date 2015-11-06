@@ -1,5 +1,5 @@
-import SERIAL from './SERIAL';
+import {SERIAL} from './SERIAL';
 
-export default function DATE(year, month, day) {
+export function DATE(year, month, day) {
   return SERIAL(new Date(year, month-1, day));
 }   

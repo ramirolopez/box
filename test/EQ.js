@@ -1,5 +1,5 @@
 import test from 'tape'
-import eq from './EQ'
+import {eq} from './EQ'
 
 test('it should compare two values', (t) => {
   t.plan(3)

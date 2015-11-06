@@ -1,7 +1,7 @@
 
-import FLATTEN from './FLATTEN';
+import {FLATTEN} from './FLATTEN';
 
-export default function SUM() {
+export function SUM() {
     var numbers = FLATTEN(arguments);
     return numbers.reduce((a, b) => a + b);
 }

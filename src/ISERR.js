@@ -1,10 +1,10 @@
 
-import error from './ERROR';
+import {ERROR} from './ERROR.;
 
-export default function(value) {
+export function(value) {
   return (
-    value !== error.na && (
-      value.constructor.name === 'Error' ||
+    value !== ERROR.na && (
+      value.constructor.name === 'ERROR. ||
       typeof(value) === 'number' && (Number.isNaN(value) || !isFinite(value)))
     );
   }

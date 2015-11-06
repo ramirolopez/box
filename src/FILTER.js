@@ -1,6 +1,6 @@
 /* The filter an array or a range by a set of filters */
 
-export default function FILTER(range, ...filters) {
+export function FILTER(range, ...filters) {
 
   // A filter is an array of true/false values.
   // The filter may be for rows or for columns but not both.

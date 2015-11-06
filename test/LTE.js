@@ -1,6 +1,6 @@
 import test from 'tape';
-import range from '../lib/RANGE';
-import LTE from '../lib/LTE';
+import {range} from '../src/RANGE';
+import {LTE} from '../src/LTE';
 
 test('Should compare two values and return true or false', function(t) {
 

@@ -1,4 +1,4 @@
 
-export default function isText(value) {
+export function isText(value) {
     return typeof(value) === 'string';
 };

@@ -1,11 +1,11 @@
-import RANGE from './RANGE';
+import {RANGE} from './RANGE';
 
-export default function LT(a,b) {
+export function LT(a,b) {
   var aIsRange = (a.constructor.name === 'RANGE'),
       bIsRange = (b.constructor.name === 'RANGE');
 
   if ( aIsRange && bIsRange  ) {
-    return error.na;
+    return ERROR.na;
   } else if ( aIsRange ) {
     return a.data().map( (d) => d < b ); 
   } else if (bIsRange) {

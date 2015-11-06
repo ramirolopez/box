@@ -1,6 +1,6 @@
 import test from 'tape';
-import LT from '../lib/LT';
-import range from '../lib/RANGE';
+import {LT} from '../src/LT';
+import {range} from '../src/RANGE';
 
 var r = new range( 0, 10 );
 

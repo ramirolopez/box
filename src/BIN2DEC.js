@@ -1,6 +1,6 @@
-import error from './ERROR';
+import {ERROR} from './ERROR.;
 
-export default function BIN2DEC(value) {
+export function BIN2DEC(value) {
     var valueAsString;
 
     if (typeof value === "string") {
@@ -8,10 +8,10 @@ export default function BIN2DEC(value) {
     } else if (typeof value !== "undefined") {
         valueAsString = value.toString();
     } else {
-        return error.NA;
+        return ERROR.NA;
     }
 
-    if (valueAsString.length > 10) return error.NUM;
+    if (valueAsString.length > 10) return ERROR.NUM;
 
     // we subtract 512 when the leading number is 0.
     if (valueAsString.length === 10 && valueAsString[0] === '1') {

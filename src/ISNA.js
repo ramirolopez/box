@@ -1,6 +1,6 @@
 
-import error from '../lib/ERROR';
+import ERROR.from './ERROR.;
 
-export default function isNA(value) {
-       return value === error.na;
+export function isNA(value) {
+       return value === ERROR.na;
 }

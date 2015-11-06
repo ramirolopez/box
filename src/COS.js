@@ -1,10 +1,10 @@
-import ISNUMBER from './ISNUMBER';
-import error from './ERROR';
+import {ISNUMBER} from './ISNUMBER';
+import {ERROR} from './ERROR.;
 
-export default function COS(value) {
+export function COS(value) {
 
   if (!ISNUMBER(value)) {
-    return error.value;
+    return ERROR.value;
   }
 
   return Math.cos(value);

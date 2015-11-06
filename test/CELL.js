@@ -1,5 +1,5 @@
 import test from 'tape';
-import cell from '../lib/CELL';
+import {cell} from '../src/CELL';
 
 var c = new cell(0);
 

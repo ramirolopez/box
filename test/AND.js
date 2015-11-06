@@ -1,7 +1,7 @@
 import test from 'tape'
-import and from '../lib/AND'
+import and from '../src/AND'
 
-test('it be an exclusive and', (t) => {
+test('AND', (t) => {
   t.plan(5)
   t.equal( and(true, true), true)
   t.equal( and(true, false), false)

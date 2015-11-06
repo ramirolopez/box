@@ -15,11 +15,11 @@
 ;(function(root) {
 
     var fn, // a container for functions used by spreadsheet formula
-        error,
+        ERROR.
         //See the [ES spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
         MAX_SAFE_INTEGER = (Math.pow(2, 53) - 1),
-        MAX_COLS = 16384,   // 14 bits, 2^14
-        MAX_ROWS = 1048576, // 20 bits, 2^20
+        MaxCols = 16384,   // 14 bits, 2^14
+        MaxRows = 1048576, // 20 bits, 2^20
 
         /*
          The cell index tracks a rows and cols with a single number.
@@ -28,9 +28,9 @@
 
          The max value is the binary number '1111111111111111111111111111111111'.
 
-         The first 20 bits from left-to-right is the row index; from 0...MAX_ROWS-1.
+         The first 20 bits from left-to-right is the row index; from 0...MaxRows-1.
          
-         The remaining 14 bits are the column index; from 0...MAX_COLS-1.
+         The remaining 14 bits are the column index; from 0...MaxCols-1.
 
          Unfortunately, since JavaScript doesn't have an unsigned shift left I was
          forced to resort to multiplication which is less efficient but will have
@@ -38,10 +38,10 @@
 
          Mapping the row/col efficiently to an array is the key to the money.
         */
-        CELLINDEX = function(row, col) { return (Math.floor((row) * MAX_COLS) + (col)); },
-        INDEX2ADDR = function(index) { var row = INDEX2ROW(index); return { rowIndex: row, colIndex: index - (row * MAX_COLS) }; },
-        INDEX2COL = function(index) { return index - (INDEX2ROW(index) * MAX_COLS); },
-        INDEX2ROW = function(index) { return Math.floor(index / MAX_COLS); }
+        CELLINDEX = function(row, col) { return (Math.floor((row) * MaxCols) + (col)); },
+        INDEX2ADDR = function(index) { var row = INDEX2ROW(index); return { rowIndex: row, colIndex: index - (row * MaxCols) }; },
+        INDEX2COL = function(index) { return index - (INDEX2ROW(index) * MaxCols); },
+        INDEX2ROW = function(index) { return Math.floor(index / MaxCols); }
 
         compiledNumber = 0,
         
@@ -92,12 +92,12 @@
         performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$),
         table: [...],
         defaultActions: {...},
-        parseError: function(str, hash),
+        parseERROR. function(str, hash),
         parse: function(input),
     
         lexer: {
             EOF: 1,
-            parseError: function(str, hash),
+            parseERROR. function(str, hash),
             setInput: function(input),
             input: function(),
             unput: function(str),
@@ -137,23 +137,23 @@
       }
     
     
-      the parseError function receives a 'hash' object with these members for lexer and parser errors: {
+      the parseERROR.function receives a 'hash' object with these members for lexer and parser ERROR.: {
         text:        (matched text)
         token:       (the produced terminal token, if any)
         line:        (yylineno)
       }
-      while parser (grammar) errors will also provide these members, i.e. parser errors deliver a superset of attributes: {
+      while parser (grammar) ERROR. will also provide these members, i.e. parser ERROR. deliver a superset of attributes: {
         loc:         (yylloc)
         expected:    (string describing the set of expected tokens)
-        recoverable: (boolean: TRUE when the parser has a error recovery rule available for this particular error)
+        recoverable: (boolean: TRUE when the parser has a ERROR.recovery rule available for this particular ERROR.
       }
     */
     var parser = (function(){
     var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,4],$V1=[1,6],$V2=[1,7],$V3=[1,8],$V4=[1,9],$V5=[1,10],$V6=[1,12],$V7=[1,13],$V8=[1,14],$V9=[1,15],$Va=[1,16],$Vb=[1,17],$Vc=[1,25],$Vd=[1,19],$Ve=[1,20],$Vf=[1,21],$Vg=[1,22],$Vh=[1,23],$Vi=[1,24],$Vj=[1,26],$Vk=[1,27],$Vl=[1,28],$Vm=[1,29],$Vn=[1,30],$Vo=[1,31],$Vp=[5,6,7,8,9,10,11,12,13,14,15,16,17,20,21,33,34,37],$Vq=[5,6,7,8,12,13,14,15,16,17,20,33,34,37],$Vr=[1,62],$Vs=[1,63],$Vt=[20,33,34,37],$Vu=[5,6,7,8,9,10,12,13,14,15,16,17,20,33,34,37],$Vv=[5,6,12,13,14,15,16,20,33,34,37],$Vw=[5,6,12,13,14,15,16,17,20,33,34,37];
     var parser = {trace: function trace() { },
     yy: {},
-    symbols_: {"error":2,"expressions":3,"e":4,"EOF":5,"=":6,"+":7,"-":8,"*":9,"/":10,"^":11,"<>":12,">":13,"<":14,">=":15,"<=":16,"&":17,"func":18,"(":19,")":20,":":21,"CELL":22,"SHEET":23,"IDENT":24,"array_literal":25,"TRUE":26,"FALSE":27,"STRING":28,"NUMBER":29,"%":30,"range":31,"param_list":32,",":33,";":34,"FUNC":35,"{":36,"}":37,"$accept":0,"$end":1},
-    terminals_: {2:"error",5:"EOF",6:"=",7:"+",8:"-",9:"*",10:"/",11:"^",12:"<>",13:">",14:"<",15:">=",16:"<=",17:"&",19:"(",20:")",21:":",22:"CELL",23:"SHEET",24:"IDENT",26:"TRUE",27:"FALSE",28:"STRING",29:"NUMBER",30:"%",33:",",34:";",35:"FUNC",36:"{",37:"}"},
+    symbols_: {"ERROR.:2,"expressions":3,"e":4,"EOF":5,"=":6,"+":7,"-":8,"*":9,"/":10,"^":11,"<>":12,">":13,"<":14,">=":15,"<=":16,"&":17,"func":18,"(":19,")":20,":":21,"CELL":22,"SHEET":23,"IDENT":24,"array_literal":25,"TRUE":26,"FALSE":27,"STRING":28,"NUMBER":29,"%":30,"range":31,"param_list":32,",":33,";":34,"FUNC":35,"{":36,"}":37,"$accept":0,"$end":1},
+    terminals_: {2:"ERROR.,5:"EOF",6:"=",7:"+",8:"-",9:"*",10:"/",11:"^",12:"<>",13:">",14:"<",15:">=",16:"<=",17:"&",19:"(",20:")",21:":",22:"CELL",23:"SHEET",24:"IDENT",26:"TRUE",27:"FALSE",28:"STRING",29:"NUMBER",30:"%",33:",",34:";",35:"FUNC",36:"{",37:"}"},
     productions_: [0,[3,2],[3,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,2],[4,3],[4,3],[4,2],[4,3],[4,3],[4,1],[4,2],[4,1],[4,2],[4,1],[4,1],[4,1],[4,1],[4,1],[4,2],[4,1],[31,3],[32,1],[32,3],[32,3],[18,4],[18,3],[25,3]],
     performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
     /* this == yyval */
@@ -263,15 +263,15 @@
     },
     table: [{3:1,4:2,6:[1,3],7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{1:[3]},{5:[1,18],6:$Vc,7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,12:$Vi,13:$Vj,14:$Vk,15:$Vl,16:$Vm,17:$Vn,21:$Vo},{4:32,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:33,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},o([5,6,7,8,9,10,11,12,13,14,15,16,20,21,33,34,37],[2,24],{17:[1,34]}),{4:35,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:36,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},o($Vp,[2,20]),{22:[1,37],24:[1,38]},o($Vp,[2,22]),o($Vp,[2,25]),o($Vp,[2,26]),o($Vp,[2,27]),o($Vp,[2,28]),o($Vp,[2,30],{30:[1,39]}),{19:[1,40]},{4:42,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,32:41,35:$Va,36:$Vb},{1:[2,1]},{4:43,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:44,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:45,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:46,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:47,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:48,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:49,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:50,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:51,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:52,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:53,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:54,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:55,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{5:[1,56],6:$Vc,7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,12:$Vi,13:$Vj,14:$Vk,15:$Vl,16:$Vm,17:$Vn,21:$Vo},o($Vq,[2,14],{9:$Vf,10:$Vg,11:$Vh,21:$Vo}),{4:57,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},o($Vp,[2,17]),{6:$Vc,7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,12:$Vi,13:$Vj,14:$Vk,15:$Vl,16:$Vm,17:$Vn,20:[1,58],21:$Vo},o($Vp,[2,21]),o($Vp,[2,23]),o($Vp,[2,29]),{4:42,7:$V0,8:$V1,18:5,19:$V2,20:[1,60],22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,32:59,35:$Va,36:$Vb},{33:$Vr,34:$Vs,37:[1,61]},o($Vt,[2,32],{6:$Vc,7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,12:$Vi,13:$Vj,14:$Vk,15:$Vl,16:$Vm,17:$Vn,21:$Vo}),o($Vq,[2,3],{9:$Vf,10:$Vg,11:$Vh,21:$Vo}),o($Vq,[2,4],{9:$Vf,10:$Vg,11:$Vh,21:$Vo}),o($Vu,[2,5],{11:$Vh,21:$Vo}),o($Vu,[2,6],{11:$Vh,21:$Vo}),o([5,6,7,8,9,10,11,12,13,14,15,16,17,20,33,34,37],[2,7],{21:$Vo}),o($Vv,[2,8],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,17:$Vn,21:$Vo}),o($Vv,[2,9],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,17:$Vn,21:$Vo}),o($Vv,[2,10],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,17:$Vn,21:$Vo}),o($Vv,[2,11],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,17:$Vn,21:$Vo}),o($Vv,[2,12],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,17:$Vn,21:$Vo}),o($Vv,[2,13],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,17:$Vn,21:$Vo}),o($Vw,[2,15],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,21:$Vo}),o($Vp,[2,19]),{1:[2,2]},o($Vw,[2,16],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,21:$Vo}),o($Vp,[2,18]),{20:[1,64],33:$Vr,34:$Vs},o($Vp,[2,36]),o($Vp,[2,37]),{4:65,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:42,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,32:66,35:$Va,36:$Vb},o($Vp,[2,35]),o($Vt,[2,33],{6:$Vc,7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,12:$Vi,13:$Vj,14:$Vk,15:$Vl,16:$Vm,17:$Vn,21:$Vo}),o([20,37],[2,34],{33:$Vr,34:$Vs})],
     defaultActions: {18:[2,1],56:[2,2]},
-    parseError: function parseError(str, hash) {
+    parseERROR. function parseERROR.str, hash) {
         if (hash.recoverable) {
             this.trace(str);
         } else {
-            throw new Error(str);
+            throw new ERROR.str);
         }
     },
     parse: function parse(input) {
-        var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = '', yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
+        var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = '', yylineno = 0, yyleng = 0, recovering = 0, TERROR.= 2, EOF = 1;
         var args = lstack.slice.call(arguments, 1);
         var lexer = Object.create(this.lexer);
         var sharedState = { yy: {} };
@@ -289,10 +289,10 @@
         var yyloc = lexer.yylloc;
         lstack.push(yyloc);
         var ranges = lexer.options && lexer.options.ranges;
-        if (typeof sharedState.yy.parseError === 'function') {
-            this.parseError = sharedState.yy.parseError;
+        if (typeof sharedState.yy.parseERROR.=== 'function') {
+            this.parseERROR.= sharedState.yy.parseERROR.
         } else {
-            this.parseError = Object.getPrototypeOf(this).parseError;
+            this.parseERROR.= Object.getPrototypeOf(this).parseERROR.
         }
         function popStack(n) {
             stack.length = stack.length - 2 * n;
@@ -308,7 +308,7 @@
                 }
                 return token;
             }
-        var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
+        var symbol, preERROR.ymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
         while (true) {
             state = stack[stack.length - 1];
             if (this.defaultActions[state]) {
@@ -323,16 +323,16 @@
                     var errStr = '';
                     expected = [];
                     for (p in table[state]) {
-                        if (this.terminals_[p] && p > TERROR) {
+                        if (this.terminals_[p] && p > TERROR. {
                             expected.push('\'' + this.terminals_[p] + '\'');
                         }
                     }
                     if (lexer.showPosition) {
-                        errStr = 'Parse error on line ' + (yylineno + 1) + ':\n' + lexer.showPosition() + '\nExpecting ' + expected.join(', ') + ', got \'' + (this.terminals_[symbol] || symbol) + '\'';
+                        errStr = 'Parse ERROR.on line ' + (yylineno + 1) + ':\n' + lexer.showPosition() + '\nExpecting ' + expected.join(', ') + ', got \'' + (this.terminals_[symbol] || symbol) + '\'';
                     } else {
-                        errStr = 'Parse error on line ' + (yylineno + 1) + ': Unexpected ' + (symbol == EOF ? 'end of input' : '\'' + (this.terminals_[symbol] || symbol) + '\'');
+                        errStr = 'Parse ERROR.on line ' + (yylineno + 1) + ': Unexpected ' + (symbol == EOF ? 'end of input' : '\'' + (this.terminals_[symbol] || symbol) + '\'');
                     }
-                    this.parseError(errStr, {
+                    this.parseERROR.errStr, {
                         text: lexer.match,
                         token: this.terminals_[symbol] || symbol,
                         line: lexer.yylineno,
@@ -341,7 +341,7 @@
                     });
                 }
             if (action[0] instanceof Array && action.length > 1) {
-                throw new Error('Parse Error: multiple actions possible at state: ' + state + ', token: ' + symbol);
+                throw new ERROR.'Parse ERROR. multiple actions possible at state: ' + state + ', token: ' + symbol);
             }
             switch (action[0]) {
             case 1:
@@ -350,7 +350,7 @@
                 lstack.push(lexer.yylloc);
                 stack.push(action[1]);
                 symbol = null;
-                if (!preErrorSymbol) {
+                if (!preERROR.ymbol) {
                     yyleng = lexer.yyleng;
                     yytext = lexer.yytext;
                     yylineno = lexer.yylineno;
@@ -359,8 +359,8 @@
                         recovering--;
                     }
                 } else {
-                    symbol = preErrorSymbol;
-                    preErrorSymbol = null;
+                    symbol = preERROR.ymbol;
+                    preERROR.ymbol = null;
                 }
                 break;
             case 2:
@@ -413,11 +413,11 @@
     
     EOF:1,
     
-    parseError:function parseError(str, hash) {
+    parseERROR.function parseERROR.str, hash) {
             if (this.yy.parser) {
-                this.yy.parser.parseError(str, hash);
+                this.yy.parser.parseERROR.str, hash);
             } else {
-                throw new Error(str);
+                throw new ERROR.str);
             }
         },
     
@@ -511,7 +511,7 @@
             if (this.options.backtrack_lexer) {
                 this._backtrack = true;
             } else {
-                return this.parseError('Lexical error on line ' + (this.yylineno + 1) + '. You can only invoke reject() in the lexer when the lexer is of the backtracking persuasion (options.backtrack_lexer = true).\n' + this.showPosition(), {
+                return this.parseERROR.'Lexical ERROR.on line ' + (this.yylineno + 1) + '. You can only invoke reject() in the lexer when the lexer is of the backtracking persuasion (options.backtrack_lexer = true).\n' + this.showPosition(), {
                     text: "",
                     token: null,
                     line: this.yylineno
@@ -526,13 +526,13 @@
             this.unput(this.match.slice(n));
         },
     
-    // displays already matched input, i.e. for error messages
+    // displays already matched input, i.e. for ERROR.messages
     pastInput:function () {
             var past = this.matched.substr(0, this.matched.length - this.match.length);
             return (past.length > 20 ? '...':'') + past.substr(-20).replace(/\n/g, "");
         },
     
-    // displays upcoming input, i.e. for error messages
+    // displays upcoming input, i.e. for ERROR.messages
     upcomingInput:function () {
             var next = this.match;
             if (next.length < 20) {
@@ -541,7 +541,7 @@
             return (next.substr(0,20) + (next.length > 20 ? '...' : '')).replace(/\n/g, "");
         },
     
-    // displays the character position where the lexing error occurred, i.e. for error messages
+    // displays the character position where the lexing ERROR.occurred, i.e. for ERROR.messages
     showPosition:function () {
             var pre = this.pastInput();
             var c = new Array(pre.length + 1).join("-");
@@ -670,7 +670,7 @@
             if (this._input === "") {
                 return this.EOF;
             } else {
-                return this.parseError('Lexical error on line ' + (this.yylineno + 1) + '. Unrecognized text.\n' + this.showPosition(), {
+                return this.parseERROR.'Lexical ERROR.on line ' + (this.yylineno + 1) + '. Unrecognized text.\n' + this.showPosition(), {
                     text: "",
                     token: null,
                     line: this.yylineno
@@ -823,33 +823,33 @@
     })();
 
     //////////// FORMULA PARSER ////////////////////////////////////
-    if (!parser) { throw Error("Parser is not loaded."); }
+    if (!parser) { throw ERROR."Parser is not loaded."); }
 
-    // Calculation Errors
-    // Define the error system
-    var error = {};
+    // Calculation ERROR.
+    // Define the ERROR.system
+    var ERROR.= {};
     
-    function CalcError(message) {
+    function CalcERROR.message) {
         this.message = message;
     }
     
-    CalcError.prototype = new Error; 
+    CalcERROR.prototype = new ERROR. 
     
-    CalcError.prototype.toString = function() {
+    CalcERROR.prototype.toString = function() {
         return this.message;
     }
     
-    error.nil = new CalcError('#NULL!');
-    error.div0 = new CalcError('#DIV/0!');
-    error.value = new CalcError('#VALUE?');
-    error.ref = new CalcError('#REF!');
-    error.name = new CalcError('#NAME?');
-    error.num = new CalcError('#NUM!');
-    error.na = new CalcError('#N/A');
-    error.error = new CalcError('#ERROR!');
-    error.data = new CalcError('#GETTING_DATA');
-    error.missing = new CalcError('#MISSING');
-    error.unknown = new CalcError('#UNKNOWN');
+    ERROR.nil = new CalcERROR.'#NULL!');
+    ERROR.div0 = new CalcERROR.'#DIV/0!');
+    ERROR.value = new CalcERROR.'#VALUE?');
+    ERROR.ref = new CalcERROR.'#REF!');
+    ERROR.name = new CalcERROR.'#NAME?');
+    ERROR.num = new CalcERROR.'#NUM!');
+    ERROR.na = new CalcERROR.'#N/A');
+    ERROR.ERROR.= new CalcERROR.'#ERROR.');
+    ERROR.data = new CalcERROR.'#GETTING_DATA');
+    ERROR.missing = new CalcERROR.'#MISSING');
+    ERROR.unknown = new CalcERROR.'#UNKNOWN');
     
 
     // Cell Model
@@ -908,15 +908,15 @@
         this.sheetIndex = sheetIndex;
         
         if (topLeft.cellIndex > bottomRight.cellIndex) {
-            throw Error("topLeft must be smaller then bottomRight");
+            throw ERROR."topLeft must be smaller then bottomRight");
         }
         
         if (typeof topLeft !== 'function' && !fn.ISCELL(topLeft)) {
-            throw Error("topLeft must be function or reference");
+            throw ERROR."topLeft must be function or reference");
         }
     
         if (typeof bottomRight !== 'function' && !fn.ISREF(bottomRight)) {
-            throw Error("bottomRight must be function or reference");
+            throw ERROR."bottomRight must be function or reference");
         }
     
         if (fn.ISFUNCTION(topLeft) || fn.ISFUNCTION(bottomRight)) {
@@ -961,7 +961,7 @@
         b = workbook.resolveCell(this.bottomRight);    
     
         if (a.sheetIndex !== b.sheetIndex) {
-            throw Error("topLeft and bottomRight must be on the same sheet.");
+            throw ERROR."topLeft and bottomRight must be on the same sheet.");
         }          
     
         if (a === null || b === null) {
@@ -1005,7 +1005,7 @@
         b = workbook.resolveCell(this.bottomRight);        
     
         if (a.sheetIndex !== b.sheetIndex) {
-            throw Error("topLeft and bottomRight must be on the same sheet.");
+            throw ERROR."topLeft and bottomRight must be on the same sheet.");
         }
     
         return (target.colIndex >= a.colIndex &&
@@ -1017,7 +1017,7 @@
     range.prototype.set = function(values) {
     
         if (!fn.ISARRAY(values)) {
-            throw TypeError("Only accepts array of values.");
+            throw TypeERROR."Only accepts array of values.");
         }
         var topLeft = workbook.resolveCell(this.topLeft);
     
@@ -1033,7 +1033,7 @@
         b = workbook.resolveCell(this.bottomRight);
         
         if (a.sheetIndex !== b.sheetIndex) {
-            throw Error("topLeft and bottomRight must be on the same sheet.");
+            throw ERROR."topLeft and bottomRight must be on the same sheet.");
         }
     
         if (a === null || b === null) {
@@ -1125,7 +1125,7 @@
     
     // Define function library container
     fn = workbook.fn = { };
-    workbook.errors = error;
+    workbook.ERROR. = ERROR.
     
     // these functions always need to use .apply(ws, ...)
     workbook.CONTEXTUAL_FUNCTIONS = ["SHEETS", "SHEET", "INDIRECT"]; 
@@ -1156,7 +1156,7 @@
         var matches = addr.match(cellRegex);
         
         if (matches === null) {
-            throw Error("Ref does not match cell reference: " + addr);    
+            throw ERROR."Ref does not match cell reference: " + addr);    
         } else {
             var result = {
                 addr: addr,
@@ -1270,14 +1270,14 @@
         case 'function':
             switch (node.name) {
             case 'IF':
-                if ( node.args.length > 3) { throw Error("IF sent too many arguments."); }
-                if ( node.args.length !== 3) { throw Error("IF expects 3 arguments"); }
+                if ( node.args.length > 3) { throw ERROR."IF sent too many arguments."); }
+                if ( node.args.length !== 3) { throw ERROR."IF expects 3 arguments"); }
                 return ('((' + compiler( node.args[0] ) + 
                         ')?' + compiler( node.args[1] ) + 
                         ':' + compiler( node.args[2] ) + ')');
                 
             case 'NOT':
-                if ( node.args.length !== 1) { throw Error("NOT only accepts one argument"); }
+                if ( node.args.length !== 1) { throw ERROR."NOT only accepts one argument"); }
                 return 'workbook.fn.NOT(' + compiler( node.args[0] ) + ')';
             case 'AND':
                 return ('workbook.fn.AND(' + 
@@ -1387,7 +1387,7 @@
         } else if (typeof col === "string" && typeof row === 'undefined') {       
             return workbook.cellInfo(col);
         } else {
-            throw Error("Expects either row, col or cell name (e.g. A1)");
+            throw ERROR."Expects either row, col or cell name (e.g. A1)");
         }         
     }    
     workbook.prototype.findDependents = function( sheetIndex, cell ) {
@@ -1509,7 +1509,7 @@
         scfn.parse_format_string(scfn.format_definitions, format_string); // make sure format is parsed
         thisformat = scfn.format_definitions[format_string]; // Get format structure
     
-        if (!thisformat) throw "Format not parsed error!";
+        if (!thisformat) throw "Format not parsed ERROR.";
     
         section = thisformat.sectioninfo.length - 1; // get number of sections - 1
     
@@ -1954,7 +1954,7 @@
             }
     
             else {
-                result += "!! Parse error !!";
+                result += "!! Parse ERROR.!!";
             }
         }
     
@@ -2365,7 +2365,7 @@
     // todo: make sure that formula lookup ignores leading "="
     workbook.prototype.lookupFormulaId = function(exp) {
         if (typeof exp !== "string") {
-            throw Error("Formula lookup key must be string");
+            throw ERROR."Formula lookup key must be string");
         }
     
         if (exp[0] === "=") {
@@ -2377,7 +2377,7 @@
         }
     }   
     workbook.makeFunction = function(name, args, exp) {
-        if (typeof name === 'undefined') throw Error("Must provide name to make formula");
+        if (typeof name === 'undefined') throw ERROR."Must provide name to make formula");
         if (typeof exp === 'undefined') { // handle overload for (name, exp)
             exp = args;
             args = "";
@@ -2391,14 +2391,14 @@
             parts = workbook.splitReference(ref);
     
             if (parts.length !== 2) {
-                throw Error("Expect two parts in ref");
+                throw ERROR."Expect two parts in ref");
             }
             
             sheetIndex = this.resolveSheet(parts[0]);
             this.namedRange[name] = this.ref(sheetIndex, parts[1]);
             
         } else {
-            throw Error("Expected format Sheet!Ref");
+            throw ERROR."Expected format Sheet!Ref");
         }
         
         return this;
@@ -2409,7 +2409,7 @@
         if (this.callbacks.hasOwnProperty(eventName)) {
             this.callbacks[eventName].push(cb);
         } else {
-            throw Error("Unknown event: " + eventName);
+            throw ERROR."Unknown event: " + eventName);
         }
     }    
     workbook.parse = function(context, exp) {
@@ -2417,11 +2417,11 @@
             exp = context;
             context = {}
         } else if (typeof exp === 'undefined') {
-            throw TypeError("No formula!");
+            throw TypeERROR."No formula!");
         }
     
         if (typeof context !== 'object' && typeof context !== 'function') {
-            throw TypeError("Context must be an object or a function!");
+            throw TypeERROR."Context must be an object or a function!");
         }
     
         parser.yy.context = context;
@@ -2453,7 +2453,7 @@
         } else if (arguments.length === 3) {
             r = new range(this, index, this.cell(index, topLeft), this.cell(index, bottomRight));
         } else {
-            throw Error("Unexpected usage.");
+            throw ERROR."Unexpected usage.");
         }
     
         return r;
@@ -2463,7 +2463,7 @@
         var f = this.functions[fid];
     
         if (!f) {
-            return error.na;
+            return ERROR.na;
         }
     
         return this.run(sheetIndex, f);
@@ -2474,7 +2474,7 @@
         } else if (typeof ref === 'function') {
             return ref();
         } else {
-            throw Error("Expects cell or function");
+            throw ERROR."Expects cell or function");
         }
     }      
     workbook.prototype.resolveSheet = function(sheetRef) {
@@ -2489,11 +2489,11 @@
         
         // ensure correct resolution
         if (typeof sheetIndex === "undefined" ) {
-            throw Error("Sheet index is undefined");
+            throw ERROR."Sheet index is undefined");
         }
         
         if ( sheetIndex < 0 ) {
-            throw Error("Sheet index is negative");
+            throw ERROR."Sheet index is negative");
         }
     
         return sheetIndex;
@@ -2503,7 +2503,7 @@
     workbook.prototype.ref = function(sheetIndex, ref) {
         var result;
         
-        if (!ref) { throw Error("ref is undefined"); }
+        if (!ref) { throw ERROR."ref is undefined"); }
     
         // handle named ranges and references that are cell objects
         if (this.namedRange.hasOwnProperty(ref)) {
@@ -2514,7 +2514,7 @@
     
         if (ref.indexOf(':') >= 0) { // handle ranges
             parts = ref.split(':');
-            if (parts.length !== 2) { throw Error("parts should have 2 length."); }
+            if (parts.length !== 2) { throw ERROR."parts should have 2 length."); }
             result = new range(this, sheetIndex, this.ref(sheetIndex, parts[0]), this.ref(sheetIndex, parts[1]));
     
         } else { // handle cells
@@ -2534,7 +2534,7 @@
         if (arguments.length === 1) {
     
             if (typeof sheetRef !== "string") {
-                throw new Error("Argument must be string if only 1 argument is passed to workbook.run");
+                throw new ERROR."Argument must be string if only 1 argument is passed to workbook.run");
             }
             
             exp = sheetRef;
@@ -2600,7 +2600,7 @@
         } else if (typeof exp === "function") {
             f = exp;
         } else {
-            throw Error("exp expected to be string or function");
+            throw ERROR."exp expected to be string or function");
         }
     
         f.context = context;
@@ -2695,7 +2695,7 @@
         var ws, wsName, ref, row, col, value, ci, sheetIndex, oldValue, exp;
     
         if (arguments.length < 2 || arguments.length > 4) {
-            throw Error("set expects 2..4 arguments. actual: " + arguments.length);
+            throw ERROR."set expects 2..4 arguments. actual: " + arguments.length);
         }
     
         sheetIndex = this.resolveSheet(arguments[0]);
@@ -2761,7 +2761,7 @@
         if ( typeof f === "number" ) {
             this.cells[sheetIndex][cellIndex].fid = f;
         } else {
-            throw Error("Cannot find function for exp: " + exp);
+            throw ERROR."Cannot find function for exp: " + exp);
         }
     
         return result;
@@ -2771,12 +2771,12 @@
         var col = cell.colIndex,
             row = cell.rowIndex;
         
-        if (row >= MAX_ROWS) {
-            throw Error("Exceeds maximum row");
+        if (row >= MaxRows) {
+            throw ERROR."Exceeds maximum row");
         }
     
-        if (col >= MAX_COLS) {
-            throw Error("Exceeds maximum col");
+        if (col >= MaxCols) {
+            throw ERROR."Exceeds maximum col");
         }
         
         var ws = this.sheets[sheetIndex], oldValue, addr;
@@ -2866,7 +2866,7 @@
             }
             
         } else {
-            throw Error("Must provide a column");
+            throw ERROR."Must provide a column");
         }
     
         return s;
@@ -2948,10 +2948,10 @@
     
         return _flatten(a);
     }
-    fn.isAnyError = function() {
+    fn.isAnyERROR.= function() {
         var n = arguments.length;
         while (n--) {
-            if (arguments[n] instanceof Error) {
+            if (arguments[n] instanceof ERROR. {
                 return true;
             }
         }
@@ -2959,12 +2959,12 @@
     };
     fn.parseNumber = function(string) {
         if (string === undefined || string === '') {
-            return error.value;
+            return ERROR.value;
         }
         if (!isNaN(string)) {
             return parseFloat(string);
         }
-        return error.value;
+        return ERROR.value;
     };
     fn.parseDate = function(date) {
         if (typeof date === 'string') {
@@ -2978,7 +2978,7 @@
             }
             var d = parseInt(date, 10);
             if (d < 0) {
-                return error.num;
+                return ERROR.num;
             }
             if (d <= 60) {
                 return new Date(d1900.getTime() + (d - 1) * MilliSecondsInDay);
@@ -2986,14 +2986,14 @@
             return new Date(d1900.getTime() + (d - 2) * MilliSecondsInDay);
         }
     
-        return error.value;
+        return ERROR.value;
     };
     fn.parseBool = function(bool) {
         if (typeof bool === 'boolean') {
             return bool;
         }
     
-        if (bool instanceof Error) {
+        if (bool instanceof ERROR. {
             return bool;
         }
     
@@ -3016,7 +3016,7 @@
             return true;
         }
     
-        return error.value;
+        return ERROR.value;
     };
     fn.serial = function(date) {
         var addOn = (date > -2203891200000)?2:1;
@@ -3074,7 +3074,7 @@
         }
     
         if (end_date < start_date) {
-            return error.num;
+            return ERROR.num;
         }
     
         switch (unit) {
@@ -3094,7 +3094,7 @@
             return "Not supported"
         }
     
-        return error.na;
+        return ERROR.na;
     }
     
     fn.DATEVALUE = function () {
@@ -3115,13 +3115,13 @@
         start_date = fn.parseDate( fn.DATEVALUE(start_date) );
         end_date = fn.parseDate( fn.DATEVALUE(end_date) );
     
-        if (start_date instanceof Error) {
+        if (start_date instanceof ERROR. {
             return start_date;
         }
-        if (end_date instanceof Error) {
+        if (end_date instanceof ERROR. {
             return end_date;
         }
-        if (method instanceof Error) {
+        if (method instanceof ERROR. {
             return method;
         }
         var sm = start_date.getMonth();
@@ -3150,11 +3150,11 @@
     };
     fn.EDATE = function(start_date, months) {
         start_date = fn.parseDate(start_date);
-        if (start_date instanceof Error) {
+        if (start_date instanceof ERROR. {
             return start_date;
         }
         if (isNaN(months)) {
-            return error.value;
+            return ERROR.value;
         }
         months = parseInt(months, 10);
         start_date.setMonth(start_date.getMonth() + months);
@@ -3162,12 +3162,12 @@
     };
     fn.EOMONTH = function(start_date, months) {
         start_date = fn.parseDate(start_date);
-        if (fn.ISERROR(start_date)) {
-            return error.na;
+        if (fn.ISERROR.start_date)) {
+            return ERROR.na;
         }
     
         if (months !== months) { // NaN(months)
-            return error.value;
+            return ERROR.value;
         }
     
         months = parseInt(months, 10);
@@ -3186,7 +3186,7 @@
     }
     fn.ISOWEEKNUM = function(date) {
         date = fn.parseDate(date);
-        if (date instanceof Error) {
+        if (date instanceof ERROR. {
             return date;
         }
     
@@ -3211,7 +3211,7 @@
             date = fn.parseDate(timestamp);
         }
     
-        if (date && !fn.ISERROR(date)) {
+        if (date && !fn.ISERROR.date)) {
             return date.getMonth() + 1;
         } else {
             return date;
@@ -3233,11 +3233,11 @@
       hour = fn.parseNumber(hour);
       minute = fn.parseNumber(minute);
       second = fn.parseNumber(second);
-      if (fn.isAnyError(hour, minute, second)) {
-        return error.value;
+      if (fn.isAnyERROR.hour, minute, second)) {
+        return ERROR.value;
       }
       if (hour < 0 || minute < 0 || second < 0) {
-        return error.num;
+        return ERROR.num;
       }
       return (((SecondsInHour * hour) + (SecondsInMinute * minute) + second) / SecondsInDay);
     };
@@ -3257,7 +3257,7 @@
     
         date = new Date(time_text);
         
-        if (date instanceof Error) {
+        if (date instanceof ERROR. {
             return date;
         }
         
@@ -3273,11 +3273,11 @@
     }
     fn.YEARFRAC = function(start_date, end_date, basis) {
         start_date = fn.parseDate(start_date);
-        if (start_date instanceof Error) {
+        if (start_date instanceof ERROR. {
             return start_date;
         }
         end_date = fn.parseDate(end_date);
-        if (end_date instanceof Error) {
+        if (end_date instanceof ERROR. {
             return end_date;
         }
     
@@ -3345,10 +3345,10 @@
         } else if (typeof value !== "undefined") {
             valueAsString = value.toString();
         } else {
-            return error.NA;
+            return ERROR.NA;
         }
         
-        if (valueAsString.length > 10) return error.NUM;
+        if (valueAsString.length > 10) return ERROR.NUM;
     
         if (valueAsString.length === 10 && valueAsString[0] === '1') {
             return parseInt(valueAsString.substring(1), 2) - 512;
@@ -3385,14 +3385,14 @@
         return false;
     }
     
-    fn.IFERROR = function(value, valueIfError) {
-        if (fn.ISERROR(value)) {
-            return valueIfError;
+    fn.IFERROR.= function(value, valueIfERROR. {
+        if (fn.ISERROR.value)) {
+            return valueIfERROR.
         }
         return value;
     };
     fn.IFNA = function(value, value_if_na) {
-        return value === error.na ? value_if_na : value;
+        return value === ERROR.na ? value_if_na : value;
     };
     fn.XOR = function() {
         var args = fn.flatten(arguments);
@@ -3433,7 +3433,7 @@
     // MORE LISPY Fucking shit in here...haha
     fn.CHOOSE = function(index) {
         if (arguments.length < 2) {
-            return error.value;
+            return ERROR.value;
         }
     
         var values = [ ];
@@ -3478,7 +3478,7 @@
             return ref.col;
         }
     
-        return error.na;
+        return ERROR.na;
     }
     fn.COLUMNS = function(ref) {
         var cols = 0;
@@ -3494,7 +3494,7 @@
                 } else if (cols === ref[i].length) {
                     continue;
                 } else { // not all columns name size; raise error
-                    return error.value;
+                    return ERROR.value;
                 }
             }
     
@@ -3505,7 +3505,7 @@
             return ref.bottomRight.colIndex - ref.topLeft.colIndex;
         }
     
-        return error.na;
+        return ERROR.na;
         
     }
     fn.LOOKUP = function() {
@@ -3547,7 +3547,7 @@
     
         }
     
-        return error.na;
+        return ERROR.na;
     
     }
     fn.HLOOKUP = function(needle, table, index, exactmatch) {
@@ -3574,7 +3574,7 @@
             }
         }             
     
-        return error.na;
+        return ERROR.na;
     }
     fn.INDIRECT = function(cell_string) {
         return this.cell(cell_string);
@@ -3589,7 +3589,7 @@
             needle = needle.valueOf();
         }
     
-        if (fn.ISERROR(needle) || fn.ISBLANK(needle)) {
+        if (fn.ISERROR.needle) || fn.ISBLANK(needle)) {
             return needle;
         }
     
@@ -3604,7 +3604,7 @@
             }
         }
         
-        return error.na;
+        return ERROR.na;
     
     }                 
     fn.MATCH = function(lookup_reference, array_reference, matchType) {
@@ -3632,17 +3632,17 @@
         } else if (fn.ISARRAY(array_reference)) {
             lookupArray = array_reference;
         } else {
-            return error.na;
+            return ERROR.na;
         }
     
         // Gotta have both lookup value and array
         if (!lookupValue && !lookupArray) {
-            return error.na;
+            return ERROR.na;
         }
     
         // Bail on weird match types!
         if (matchType !== -1 && matchType !== 0 && matchType !== 1) {
-            return error.na;
+            return ERROR.na;
         }
         
         
@@ -3697,7 +3697,7 @@
             }
         }
         
-        return index ? index : error.na;
+        return index ? index : ERROR.na;
     };
     
     fn.OFFSET = function(ref, rows, cols, height, width) {
@@ -3722,14 +3722,14 @@
             topLeft = JSON.parse(JSON.stringify(topLeft));
     
             if (fn.ISBLANK(rows) || fn.ISBLANK(cols)) {
-                return error.na;
+                return ERROR.na;
             }
             
             rowsVal = fn.ISCELL(rows) ? rows.valueOf() : rows;
             colsVal = fn.ISCELL(cols) ? cols.valueOf() : cols;
     
-            if (fn.ISERROR(rowsVal) || fn.ISERROR(colsVal)) {
-                return error.na;
+            if (fn.ISERROR.rowsVal) || fn.ISERROR.colsVal)) {
+                return ERROR.na;
             }
             
             topLeft.rowIndex += rowsVal;
@@ -3755,7 +3755,7 @@
             }
             
         } catch (e) {
-            return workbook.errors.value;
+            return workbook.ERROR..value;
         }
     };
     fn.INDEX = function(reference, row_num, column_num) {
@@ -3766,7 +3766,7 @@
             if (fn.ISRANGE(reference)) {
                 cell = workbook.cellInfo(reference.topLeft);
             } else {
-                if (!fn.ISCELL(reference)) { return workbook.errors.na; }
+                if (!fn.ISCELL(reference)) { return workbook.ERROR..na; }
                 cell = workbook.cellInfo(reference.addr());
             }
             
@@ -3793,7 +3793,7 @@
             return ref.row;
         }
     
-        return error.na;
+        return ERROR.na;
         
     }    
     fn.ROWS = function(ref) {
@@ -3808,13 +3808,13 @@
             return ref.bottomRight.rowIndex - ref.topLeft.rowIndex;
         }
     
-        return error.na;
+        return ERROR.na;
         
     }
     fn.CELL = function(info_type, reference) {
     
         if (!fn.ISCELL(reference)) {
-            return error.NA;
+            return ERROR.NA;
         }
         
         switch (info_type) {
@@ -3826,21 +3826,21 @@
         case "row":
             return reference.row;
         case "color":
-            return error.missing;
+            return ERROR.missing;
         case "contents":
-            return error.missing;
+            return ERROR.missing;
         case "format":
-            return error.missing;
+            return ERROR.missing;
         case "parentheses":
-            return error.missing;
+            return ERROR.missing;
         case "prefix":
-            return error.missing;
+            return ERROR.missing;
         case "protect":
-            return error.missing;
+            return ERROR.missing;
         case "type":
-            return error.missing;
+            return ERROR.missing;
         case "width":
-            return error.missing;
+            return ERROR.missing;
         }
     
     };    
@@ -3878,12 +3878,12 @@
     fn.ISERR = function(value) {
         if (typeof value === 'undefined' || value === null) { return false; }
         value = value.valueOf();
-        return ([error.value, error.ref, error.div0, error.num, error.name, error.nil]).indexOf(value) >= 0 ||
+        return ([ERROR.value, ERROR.ref, ERROR.div0, ERROR.num, ERROR.name, ERROR.nil]).indexOf(value) >= 0 ||
             (typeof value === 'number' && (value !== value || !isFinite(value))); // ensure numbers are not NaN or Infinity
     };    
-    fn.ISERROR = function(value) {
+    fn.ISERROR.= function(value) {
         if (fn.ISCELL(value)) { value = value.valueOf(); }
-        return fn.ISERR(value) || value === error.na;
+        return fn.ISERR(value) || value === ERROR.na;
     };    
     fn.ISEVEN = function(value) {
         if (fn.ISCELL(value)) { value = value.valueOf(); }
@@ -3900,7 +3900,7 @@
     };    
     fn.ISNA = function(value) {
         if (fn.ISCELL(value)) { value = value.valueOf(); }
-        return value === error.na;
+        return value === ERROR.na;
     };    
     fn.ISNONTEXT = function(value) {
         return typeof(value) !== 'string';
@@ -3937,13 +3937,13 @@
         if (value === false) {
             return 0;
         }
-        if (fn.ISERROR(value)) {
+        if (fn.ISERROR.value)) {
             return value;
         }
         return 0;
     };    
     fn.NA = function() {
-        return error.na;
+        return ERROR.na;
     };    
     fn.PRECEDENTS = function(cell) {
     
@@ -3970,7 +3970,7 @@
         else if (workbook.fn.ISNUMBER(value)) {
             return 1;
         }
-        else if (workbook.fn.ISERROR(value)) {
+        else if (workbook.fn.ISERROR.value)) {
             return 16;
         }
         else if (workbook.fn.ISARRAY(value)) {
@@ -4013,7 +4013,7 @@
         return result;
     };
     fn.ACCRINT = function(issue, first, settlement, rate, par, frequency, basis) {
-        // Return error if either date is invalid
+        // Return ERROR.if either date is invalid
         var issueDate      = fn.parseDate(fn.DATEVALUE(issue.valueOf()));
         var firstDate      = fn.parseDate(fn.DATEVALUE(first.valueOf()));
         var settlementDate = fn.parseDate(fn.DATEVALUE(settlement.valueOf()));
@@ -4026,28 +4026,28 @@
         var validDate = fn.validDate;
         
         if (!validDate(issueDate) || !validDate(firstDate) || !validDate(settlementDate)) {
-            return error.value;
+            return ERROR.value;
         }
     
     
-        // Return error if either rate or par are lower than or equal to zero
+        // Return ERROR.if either rate or par are lower than or equal to zero
         if (rate <= 0 || par <= 0) {
-            return error.num;
+            return ERROR.num;
         }
     
-        // Return error if frequency is neither 1, 2, or 4
+        // Return ERROR.if frequency is neither 1, 2, or 4
         if ([1, 2, 4].indexOf(frequency.valueOf()) === -1) {
-            return error.num;
+            return ERROR.num;
         }
     
-        // Return error if basis is neither 0, 1, 2, 3, or 4
+        // Return ERROR.if basis is neither 0, 1, 2, 3, or 4
         if ([0, 1, 2, 3, 4].indexOf(basis) === -1) {
-            return error.num;
+            return ERROR.num;
         }
     
-        // Return error if settlement is before or equal to issue
+        // Return ERROR.if settlement is before or equal to issue
         if (settlementDate <= issueDate) {
-            return error.num;
+            return ERROR.num;
         }
     
     
@@ -4062,23 +4062,23 @@
         rate = utils.parseNumber(rate);
         periods = utils.parseNumber(periods);
         value = utils.parseNumber(value);
-        if (utils.isAnyError(rate, periods, value)) {
-            return error.value;
+        if (utils.isAnyERROR.rate, periods, value)) {
+            return ERROR.value;
         }
     
-        // Return error if either rate, periods, or value are lower than or equal to zero
+        // Return ERROR.if either rate, periods, or value are lower than or equal to zero
         if (rate <= 0 || periods <= 0 || value <= 0) {
-            return error.num;
+            return ERROR.num;
         }
     
-        // Return error if start < 1, end < 1, or start > end
+        // Return ERROR.if start < 1, end < 1, or start > end
         if (start < 1 || end < 1 || start > end) {
-            return error.num;
+            return ERROR.num;
         }
     
-        // Return error if type is neither 0 nor 1
+        // Return ERROR.if type is neither 0 nor 1
         if (type !== 0 && type !== 1) {
-            return error.num;
+            return ERROR.num;
         }
     
         // Compute cumulative interest
@@ -4124,9 +4124,9 @@
     };
     fn.FV = function(rate, periods, payment, value, type) {
     
-        if (typeof rate === 'undefined') throw Error("rate is undefined");
-        if (typeof periods === 'undefined') throw Error("rate is undefined");
-        if (typeof payment === 'undefined') throw Error("rate is undefined");
+        if (typeof rate === 'undefined') throw ERROR."rate is undefined");
+        if (typeof periods === 'undefined') throw ERROR."rate is undefined");
+        if (typeof payment === 'undefined') throw ERROR."rate is undefined");
     
         value = value || 0;
         type = type || 0;
@@ -4146,9 +4146,9 @@
         return -fv;
     };
       fn.PV = function(rate, periods, payment, future, type) {
-    if (typeof rate === 'undefined') throw Error("rate is undefined");
-    if (typeof periods === 'undefined') throw Error("rate is undefined");
-    if (typeof payment === 'undefined') throw Error("rate is undefined");
+    if (typeof rate === 'undefined') throw ERROR."rate is undefined");
+    if (typeof periods === 'undefined') throw ERROR."rate is undefined");
+    if (typeof payment === 'undefined') throw ERROR."rate is undefined");
         
     future = future || 0;
     type = type || 0;
@@ -4218,7 +4218,7 @@
     fn.ACOS = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return Math.acos(number);
@@ -4226,7 +4226,7 @@
     fn.ACOSH = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return Math.log(number + Math.sqrt(number * number - 1));
@@ -4234,7 +4234,7 @@
     fn.ACOT = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return Math.atan(1 / number);
@@ -4243,7 +4243,7 @@
     fn.ACOTH = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return 0.5 * Math.log((number + 1) / (number - 1));
@@ -4257,7 +4257,7 @@
     
         // check for NaN
         if (a !== a || b !== b) {
-            return error.value;
+            return ERROR.value;
         }
         
         return a + b;
@@ -4265,7 +4265,7 @@
     fn.ASIN = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return Math.asin(number);
@@ -4273,7 +4273,7 @@
     fn.ASINH = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return Math.log(number + Math.sqrt(number * number + 1));
@@ -4281,7 +4281,7 @@
     fn.ATAN = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return Math.atan(number);
@@ -4289,11 +4289,11 @@
     fn.ATAN2 = function(number_x, number_y) {
     
         if (!fn.ISNUMBER(number_x)) {
-            return error.value;
+            return ERROR.value;
         }
     
         if (!fn.ISNUMBER(number_y)) {
-            return error.value;
+            return ERROR.value;
         }
         
         
@@ -4302,7 +4302,7 @@
     fn.ATANH = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return Math.log((1 + number) / (1 - number)) / 2;
@@ -4313,8 +4313,8 @@
       number = fn.parseNumber(number);
       radix = fn.parseNumber(radix);
       min_length = fn.parseNumber(min_length);
-      if (fn.isAnyError(number, radix, min_length)) {
-        return error.value;
+      if (fn.isAnyERROR.number, radix, min_length)) {
+        return ERROR.value;
       }
       min_length = (min_length === undefined) ? 0 : min_length;
       var result = number.toString(radix);
@@ -4329,8 +4329,8 @@
         number = utils.parseNumber(number);
         significance = utils.parseNumber(significance);
         mode = utils.parseNumber(mode);
-        if (utils.isAnyError(number, significance, mode)) {
-            return error.value;
+        if (utils.isAnyERROR.number, significance, mode)) {
+            return ERROR.value;
         }
         if (significance === 0) {
             return 0;
@@ -4351,8 +4351,8 @@
         var utils = workbook.fn;
         number = utils.parseNumber(number);
         number_chosen = utils.parseNumber(number_chosen);
-        if (utils.isAnyError(number, number_chosen)) {
-            return error.value;
+        if (utils.isAnyERROR.number, number_chosen)) {
+            return ERROR.value;
         }
         return fn.FACT(number) / (fn.FACT(number_chosen) * fn.FACT(number - number_chosen));
     };
@@ -4360,7 +4360,7 @@
     fn.COS = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return Math.cos(number);
@@ -4368,7 +4368,7 @@
     fn.COSH = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return (Math.exp(number) + Math.exp(-number)) / 2;
@@ -4376,7 +4376,7 @@
     fn.COT = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return 1 / Math.tan(number);
@@ -4384,7 +4384,7 @@
     fn.COTH = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         var e2 = Math.exp(2 * number);
@@ -4394,7 +4394,7 @@
     fn.CSC = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return 1 / Math.sin(number);
@@ -4402,21 +4402,21 @@
     fn.CSCH = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return 2 / (Math.exp(number) - Math.exp(-number));
     };        
     fn.DECIMAL = function(number, radix) {
         if (arguments.length < 1) {
-            return error.value;
+            return ERROR.value;
         }
     
         return parseInt(number, radix);
     };
     fn.DEGREES = function(number) {
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return number * 180 / Math.PI;
@@ -4429,14 +4429,14 @@
     
         // check for NaN
         if (a !== a || b !== b) {
-            return error.value;
+            return ERROR.value;
         }
         
         return a / b;
     }    
     fn.EVEN = function(number) {
         number = fn.parseNumber(number);
-        if (number instanceof Error) {
+        if (number instanceof ERROR. {
             return number;
         }
         return fn.CEILING(number, -2, -1);
@@ -4465,7 +4465,7 @@
     var MEMOIZED_FACT = [];
     fn.FACT = function(number) {
         number = fn.parseNumber(number);
-        if (number instanceof Error) {
+        if (number instanceof ERROR. {
             return number;
         }
         var n = Math.floor(number);
@@ -4480,7 +4480,7 @@
     };
     fn.FACTDOUBLE = function(number) {
       number = fn.parseNumber(number);
-      if (number instanceof Error) {
+      if (number instanceof ERROR. {
         return number;
       }
       var n = Math.floor(number);
@@ -4511,7 +4511,7 @@
     fn.GCD = function() {
         var utils = workbook.fn;
         var range = utils.parseNumberArray(utils.flatten(arguments));
-        if (range instanceof Error) {
+        if (range instanceof ERROR. {
             return range;
         }
         var n = range.length;
@@ -4561,7 +4561,7 @@
         // Credits: Jonas Raoni Soares Silva
         var utils = workbook.fn;
         var o = utils.parseNumberArray(utils.flatten(arguments));
-        if (o instanceof Error) {
+        if (o instanceof ERROR. {
             return o;
         }
         for (var i, j, n, d, r = 1;
@@ -4587,7 +4587,7 @@
     fn.LN = function(number) {
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return Math.log(number);
@@ -4597,11 +4597,11 @@
         base = base || 10;
     
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         if (!fn.ISNUMBER(base)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return Math.log(number) / Math.log(base);
@@ -4609,7 +4609,7 @@
     };        
     fn.LOG10 = function(number) {
         if (!fn.ISNUMBER(number)) {
-            return error.value;
+            return ERROR.value;
         }
     
         return Math.log(number) / Math.log(10);
@@ -4651,7 +4651,7 @@
     
         // check for NaN
         if (a !== a || b !== b) {
-            return error.value;
+            return ERROR.value;
         }
         
         return a - b;
@@ -4667,7 +4667,7 @@
     
         // check for NaN
         if (a !== a || b !== b) {
-            return error.value;
+            return ERROR.value;
         }
         
         return a * b;
@@ -4702,13 +4702,13 @@
     fn.QUOTIENT = function(a, b) {
         var q = Math.floor( a / b );
         if (q !== q) {
-            return error.value;
+            return ERROR.value;
         }
         return q;
     }
     fn.RADIANS = function(number) {
       number = fn.parseNumber(number);
-      if (number instanceof Error) {
+      if (number instanceof ERROR. {
         return number;
       }
       return number * Math.PI / 180;
@@ -4719,8 +4719,8 @@
     fn.RANDBETWEEN = function(bottom, top) {
       bottom = fn.parseNumber(bottom);
       top = fn.parseNumber(top);
-      if (fn.isAnyError(bottom, top)) {
-        return error.value;
+      if (fn.isAnyERROR.bottom, top)) {
+        return ERROR.value;
       }
       // Creative Commons Attribution 3.0 License
       // Copyright (c) 2012 eqcode
@@ -4792,7 +4792,7 @@
         for (var i = 0; i < range.length; i++) {
             if (typeof range[i] !== 'string') {
     
-                if (fn.ISERROR(range[i])) { continue; }
+                if (fn.ISERROR.range[i])) { continue; }
                 if (eval(range[i] + criteria)) {
                     matches++;
                 }
@@ -4848,8 +4848,8 @@
         data_y = utils.parseNumberArray(utils.flatten(data_y));
         data_x = utils.parseNumberArray(utils.flatten(data_x));
     
-        if (utils.anyIsError(data_y, data_x)) {
-            return error.value;
+        if (utils.anyIsERROR.data_y, data_x)) {
+            return ERROR.value;
         }
         var xmean = jStat.mean(data_x);
         var ymean = jStat.mean(data_y);
@@ -4869,7 +4869,7 @@
     };
     fn.CHAR = function(number) {
         number = fn.parseNumber(number);
-        if (number instanceof Error) {
+        if (number instanceof ERROR. {
             return number;
         }
         return String.fromCharCode(number);
@@ -4914,7 +4914,7 @@
         }
     
         if (typeof a !== "string" || typeof b !== "string") {
-            return error.na;
+            return ERROR.na;
         }
     
         return a === b;
@@ -4923,7 +4923,7 @@
         if (!within_text) { return null; }
         position = (typeof position === 'undefined') ? 1 : position;
         position = within_text.indexOf(find_text, position - 1) + 1;
-        return position === 0 ? workbook.errors.value : position;
+        return position === 0 ? workbook.ERROR..value : position;
     }
     fn.FIXED = function(num, decimals, commas) {
         if (commas) { return num.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
@@ -4932,14 +4932,14 @@
     fn.LEFT = function(text, number) {
         number = (number === undefined) ? 1 : number;
         number = fn.parseNumber(number);
-        if (number instanceof Error || typeof text !== 'string') {
-            return error.value;
+        if (number instanceof ERROR.|| typeof text !== 'string') {
+            return ERROR.value;
         }
         return text ? text.substring(0, number) : null;
     };
       LEN = function(text) {
     if (arguments.length === 0) {
-        return error.error;
+        return ERROR.ERROR.
     }
     
     if (typeof text === 'string') {
@@ -4950,7 +4950,7 @@
         return text.length;
     }
     
-    return error.value;
+    return ERROR.value;
       };
     fn.LOWER = function(text) {
         if (typeof text === 'undefined' || text === null) return "";
@@ -4962,14 +4962,14 @@
     fn.MID = function(text, start, number) {
         start = fn.parseNumber(start);
         number = fn.parseNumber(number);
-        if (fn.isAnyError(start, number) || typeof text !== 'string') {
+        if (fn.isAnyERROR.start, number) || typeof text !== 'string') {
             return number;
         }
         return text.substring(start - 1, number+1);
     };
     fn.PROPER = function(text) {
         if (text === undefined || text.length === 0) {
-            return error.value;
+            return ERROR.value;
         }
         if (text === true) {
             text = 'TRUE';
@@ -4978,7 +4978,7 @@
             text = 'FALSE';
         }
         if (isNaN(text) && typeof text === 'number') {
-            return error.value;
+            return ERROR.value;
         }
         if (typeof text === 'number') {
             text = '' + text;
@@ -4991,10 +4991,10 @@
     fn.REPLACE = function(text, position, length, new_text) {
         position = fn.parseNumber(position);
         length = fn.parseNumber(length);
-        if (fn.isAnyError(position, length) ||
+        if (fn.isAnyERROR.position, length) ||
             typeof text !== 'string' ||
             typeof new_text !== 'string') {
-            return error.value;
+            return ERROR.value;
         }
         return text.substr(0, position - 1) + new_text + text.substr(position - 1 + length);
     };
@@ -5008,7 +5008,7 @@
     fn.RIGHT = function(text, number) {
         number = (number === undefined) ? 1 : number;
         number = fn.parseNumber(number);
-        if (number instanceof Error) {
+        if (number instanceof ERROR. {
             return number;
         }
         return text ? text.substring(text.length - number) : null;
@@ -5027,7 +5027,7 @@
         position = new RegExp(find_exp, "i").exec(within_text);
     
         if (position) { return position.index + 1 }
-        return workbook.errors.value;
+        return workbook.ERROR..value;
     }
     fn.SPLIT = function (text, separator) {
         return text.split(separator);
@@ -5057,7 +5057,7 @@
     };
     fn.TRIM = function(text) {
         if (typeof text !== 'string') {
-            return error.value;
+            return ERROR.value;
         }
         return text.replace(/ +/g, ' ').trim();
     };
@@ -5079,7 +5079,7 @@
     // practice for AMD registration is to be anonymous, underscore registers
     // as a named module because, like jQuery, it is a base library that is
     // popular enough to be bundled in a third party lib, but not be part of
-    // an AMD load request. Those cases could generate an error when an
+    // an AMD load request. Those cases could generate an ERROR.when an
     // anonymous define() is called outside of a loader request.
     if (typeof define === 'function' && define.amd) {
         define('formula', [], function() {

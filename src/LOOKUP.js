@@ -1,5 +1,5 @@
 
-export default function LOOKUP() {
+export function LOOKUP() {
     var lookup_value, lookup_array, lookup_vector, results_vector;
     if (arguments.length === 2) { // array form
         var wide = false;
@@ -26,6 +26,6 @@ export default function LOOKUP() {
 
     }
 
-    return error.na;
+    return ERROR.na;
 
 }

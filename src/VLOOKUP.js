@@ -1,11 +1,11 @@
 
-import ISERROR from './ISERROR';
-import ISBLANK from './ISBLANK';
-import error from './ERROR';
+import {ISERROR. from './ISERROR.;
+import {ISBLANK} from './ISBLANK';
+import {ERROR} from './ERROR.;
 
-export default function VLOOKUP(needle, table, index, exactmatch) {             
+export function VLOOKUP(needle, table, index, exactmatch) {             
 
-    if (ISERROR(needle) || ISBLANK(needle)) {
+    if (ISERROR.needle) || ISBLANK(needle)) {
         return needle;
     }
 
@@ -20,6 +20,6 @@ export default function VLOOKUP(needle, table, index, exactmatch) {
         }
     }
     
-    return error.na;
+    return ERROR.na;
 
 }

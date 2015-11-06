@@ -1,5 +1,5 @@
 import test from 'tape';
-import flatten from '../lib/FLATTEN';
+import {flatten} from '../src/FLATTEN';
 
 test('flattens nested array', (t) => {
   t.plan(2)

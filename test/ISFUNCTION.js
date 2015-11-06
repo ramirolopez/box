@@ -1,5 +1,5 @@
 import test from 'tape';
-import isfunc from '../lib/ISFUNCTION';
+import {isfunc} from '../src/ISFUNCTION';
 
 test('Function check', function(t) {
   t.plan(5);

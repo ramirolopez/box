@@ -1,7 +1,7 @@
 
-import ISBLANK from './ISBLANK';
+import {ISBLANK} from './ISBLANK';
 
-export default function HLOOKUP(needle, table, index, exactmatch) {
+export function HLOOKUP(needle, table, index, exactmatch) {
     if (typeof needle === "undefined" || ISBLANK(needle)) {
         return null;
     }
@@ -17,5 +17,5 @@ export default function HLOOKUP(needle, table, index, exactmatch) {
         }
     }             
 
-    return error.na;
+    return ERROR.na;
 }

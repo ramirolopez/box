@@ -1,11 +1,11 @@
 import test from 'tape';
-import or from '../lib/OR';
+import {OR} from '../src/OR';
 
 test('it should be this or that', function(t) {
   t.plan(5);
-  t.equal( or( true, true), true);
-  t.equal( or( true, false), true);
-  t.equal( or( false, true), true);
-  t.equal( or( false, false, true), true);
-  t.equal( or( false, false ), false);
+  t.equal( OR( true, true), true);
+  t.equal( OR( true, false), true);
+  t.equal( OR( false, true), true);
+  t.equal( OR( false, false, true), true);
+  t.equal( OR( false, false ), false);
 });

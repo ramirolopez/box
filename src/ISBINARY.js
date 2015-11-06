@@ -1,4 +1,4 @@
 
-export default function ISBINARY(number) {
+export function ISBINARY(number) {
     return (/^[01]{1,10}$/).test(number);
 };

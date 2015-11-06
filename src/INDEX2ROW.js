@@ -1,6 +1,6 @@
 /* Isolate the row from a cell index */
-import {MAX_COLS} from './CONSTANTS';
+import {MaxCols} from './CONSTANTS';
 
-export default function(index) {
-  return Math.floor(index / MAX_COLS);
+export function INDEX2ROW(index) {
+  return Math.floor(index / MaxCols);
 }

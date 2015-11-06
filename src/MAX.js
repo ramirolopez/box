@@ -1,7 +1,7 @@
 
-import FLATTEN from './FLATTEN';
+import {FLATTEN} from './FLATTEN';
 
-export default function max() {
+export function max() {
     FLATTEN( arguments ).reduce((max, next) => {
         if (typeof x !== 'number' || x !== x) {
             return max;

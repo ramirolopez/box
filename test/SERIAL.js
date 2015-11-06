@@ -1,4 +1,4 @@
-import serial from '../lib/SERIAL';
+import {serial} from '../src/SERIAL';
 import test from 'tape';
 
 test('should convert a date to a number', function(t) {

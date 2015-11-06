@@ -1,3 +1,3 @@
-export default function UPPER(string) {
+export function UPPER(string) {
   return string.toUpperCase()
 }

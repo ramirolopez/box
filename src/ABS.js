@@ -1,9 +1,9 @@
-import ISNUMBER from './ISNUMBER';
-import error from './ERROR';
+import {ISNUMBER} from './ISNUMBER';
+import {ERROR} from './ERROR.;
 
-export default function ABS(value) {
+export function ABS(value) {
   if (!ISNUMBER(value)) {
-    return error.value;
+    return ERROR.value;
   }
   return Math.abs(value);
 }

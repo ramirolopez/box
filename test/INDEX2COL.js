@@ -1,5 +1,5 @@
-import INDEX2COL from '../lib/INDEX2COL';
-import error from '../lib/ERROR';
+import {INDEX2COL} from '../src/INDEX2COL';
+import {ERROR} from '../src/ERROR';
 import test from 'tape';
 
 test('should convert row and column to number', function(t) {

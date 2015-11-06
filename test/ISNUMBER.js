@@ -1,4 +1,4 @@
-import isnumber from '../lib/ISNUMBER';
+import {isnumber} from '../src/ISNUMBER';
 import test from 'tape';
 
 test('should identify numbers', function(t) {

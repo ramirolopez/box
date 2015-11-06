@@ -1,6 +1,6 @@
 
-import error from './ERROR';
+import {ERROR} from './ERROR.;
 
-export default function IFNA(value, value_if_na) {
-    return value === error.na ? value_if_na : value;
+export function IFNA(value, value_if_na) {
+    return value === ERROR.na ? value_if_na : value;
 }

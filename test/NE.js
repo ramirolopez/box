@@ -1,5 +1,5 @@
 import test from 'tape'
-import ne from './NE'
+import ne from '../src/NE'
 
 test('is should test for not equal', (t) => {
   t.plan(3)

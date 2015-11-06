@@ -1,5 +1,5 @@
 import test from 'tape'
-import isArray from './ISARRAY'
+import {isArray} from './ISARRAY'
 
 test( 'it should identify an array', (t) => {
   t.plan(3)

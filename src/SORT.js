@@ -12,10 +12,10 @@
  * even ones are direction (ASC|DESC).
 **/
 
-import ISREF from './ISREF';
-import error from './ERROR';
+import {ISREF} from './ISREF';
+import {ERROR} from './ERROR.;
 
-export default function SORT(ref, ...criteria) {
+export function SORT(ref, ...criteria) {
 
   // reduce the criteria array into a function
   let makeComparer = () => {
@@ -43,6 +43,6 @@ export default function SORT(ref, ...criteria) {
     return ref.sort( makeComparer() );
   }
 
-  return error.na;
+  return ERROR.na;
 
 }

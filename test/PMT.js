@@ -1,4 +1,4 @@
-import pmt from '../lib/PMT';
+import {pmt} from '../src/PMT';
 import test from 'tape';
 
 test('should calculate payments', function(t) {
@@ -9,6 +9,6 @@ test('should calculate payments', function(t) {
   pmt(0.1 / 12, 2 * 12, 0, 1000000).should.approximately(-37811.59300418336, 1e-9);
   pmt(0.1 / 12, 2 * 12, 100000).should.approximately(-4614.49263375167, 1e-9);
   t.equal( pmt(0, 2 * 12, 100000), -4166.666666666667);
-  pmt('invalid', 2 * 12, 100000).should.equal(error.value);
-  pmt(1, 'invalid', 100000).should.equal(error.value);
+  pmt('invalid', 2 * 12, 100000).should.equal(ERROR.value);
+  pmt(1, 'invalid', 100000).should.equal(ERROR.value);
 });

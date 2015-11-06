@@ -1,5 +1,5 @@
 
-export default function SWITCH() {
+export function SWITCH() {
   var result;
   if (arguments.length > 0)  {
     var targetValue = arguments[0];

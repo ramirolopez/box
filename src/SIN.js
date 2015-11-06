@@ -1,10 +1,10 @@
-import ISNUMBER from './ISNUMBER';
-import error from './ERROR';
+import {ISNUMBER} from './ISNUMBER';
+import {ERROR} from './ERROR.;
 
-export default function SIN(value) {
+export function SIN(value) {
 
   if (!ISNUMBER(value)) {
-    return error.value;
+    return ERROR.value;
   }
 
   return Math.sin(value);

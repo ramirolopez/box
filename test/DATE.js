@@ -1,4 +1,4 @@
-import date from '../lib/DATE';
+import {date} from '../src/DATE';
 import test from 'tape';
 
 test('should return a serial number', function(t) {

@@ -1,7 +1,7 @@
 import test from 'tape';
-import Range from '../lib/RANGE';
-import Cell from '../lib/CELL';
-import isref from '../lib/ISREF';
+import {Range} from '../src/RANGE';
+import {Cell} from '../src/CELL';
+import {isref} from '../src/ISREF';
 
 test('isref', function(t) {
   t.plan(2)

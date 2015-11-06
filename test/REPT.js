@@ -1,5 +1,5 @@
 import assert from 'assert';
-import REPT from '../lib/REPT';
+import {REPT} from '../src/REPT';
 import test from 'tape';
 
 test('should repeat a text pattern n times', function(t) {
