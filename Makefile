@@ -6,8 +6,5 @@ lib/%.js: src/%.js
 	mkdir -p $(@D)
 	babel $< -o $@
 
-test:
-	cucumber-js -f pretty
-
 clean:
 	rm -rf lib/
