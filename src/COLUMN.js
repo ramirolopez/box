@@ -1,4 +1,4 @@
-import {ERROR} from './ERROR.
+import error from './error.
 /* Convert index to column (e.g A -> 1) */
 function toColumnNumber(column) {
 
@@ -19,7 +19,7 @@ function toColumnNumber(column) {
         }
 
     } else {
-      return ERROR.val;
+      return error.val;
     }
 
     return s;

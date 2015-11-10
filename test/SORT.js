@@ -1,25 +1,25 @@
 import test from 'tape';
-import {sort} from '../src/SORT';
+import {SORT} from '../src/SORT';
 
-test('it should be this sort that', function(t) {
+test('SORT', function(t) {
   t.plan(4);
   var a1 = [4, 3, 2, 1].map( n => [n, -n*n, n*n*n]);
 
-  t.deepEqual( sort( a1,  1, true ), [
+  t.deepEqual( SORT( a1,  1, true ), [
     [1, -1, 1],
     [2, -4, 8],
     [3, -9, 27],
     [4, -16, 64],
   ]);
 
-  t.deepEqual( sort( a1,  2, false ), [
+  t.deepEqual( SORT( a1,  2, false ), [
     [1, -1, 1],
     [2, -4, 8],
     [3, -9, 27],
     [4, -16, 64],
   ]);
 
-  t.deepEqual( sort( a1,  3, false ), [
+  t.deepEqual( SORT( a1,  3, false ), [
     [4, -16, 64],
     [3, -9, 27],
     [2, -4, 8],
@@ -33,7 +33,7 @@ test('it should be this sort that', function(t) {
     ['b', 'b']
   ]
 
-  t.deepEqual( sort( a2, 1, true, 2, true ), [
+  t.deepEqual( SORT( a2, 1, true, 2, true ), [
     ['a', 'a']
     ['a', 'b'],
     ['b', 'a']

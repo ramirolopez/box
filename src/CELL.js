@@ -4,7 +4,15 @@ import {INDEX2ROW} from './INDEX2ROW';
 /* Structure for CELL reference
 */
 export function CELL(index) {
+  if (typeof index !== 'number') {
+    throw 'Cell index must be a Number';
+  }
   return {
+    /* Cells also support topLeft
+     */
+    topLeft: function() {
+      return index
+    },
     /* Returns rowIndex
     */
     getRow: function() {

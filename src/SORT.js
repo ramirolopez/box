@@ -13,7 +13,7 @@
 **/
 
 import {ISREF} from './ISREF';
-import {ERROR} from './ERROR.;
+import error from './ERROR';
 
 export function SORT(ref, ...criteria) {
 
@@ -43,6 +43,6 @@ export function SORT(ref, ...criteria) {
     return ref.sort( makeComparer() );
   }
 
-  return ERROR.na;
+  return error.na;
 
 }

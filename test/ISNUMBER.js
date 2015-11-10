@@ -1,13 +1,13 @@
-import {isnumber} from '../src/ISNUMBER';
+import {ISNUMBER} from '../src/ISNUMBER';
 import test from 'tape';
 
-test('should identify numbers', function(t) {
+test('ISNUMBER', function(t) {
   t.plan(7)
-  t.equal( isnumber(1), true );
-  t.equal( isnumber(1.0), true );
-  t.equal( isnumber(1.5), true );
-  t.equal( isnumber("foo"), false );
-  t.equal( isnumber(NaN), false );
-  t.equal( isnumber(Number.POSITIVE_INFINITY), false );
-  t.equal( isnumber(Number.NEGATIVE_INFINITY), false );
+  t.equal( ISNUMBER(1), true );
+  t.equal( ISNUMBER(1.0), true );
+  t.equal( ISNUMBER(1.5), true );
+  t.equal( ISNUMBER("foo"), false );
+  t.equal( ISNUMBER(NaN), false );
+  t.equal( ISNUMBER(Number.POSITIVE_INFINITY), false );
+  t.equal( ISNUMBER(Number.NEGATIVE_INFINITY), false );
 });

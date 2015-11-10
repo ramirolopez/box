@@ -1,6 +1,6 @@
 // Returns half the universal circle constant
+import {PI} from './CONSTANTS'
 
-import {{PI}} from './CONSTANTS'
-export function() {
+export function PI() {
   return PI;
 }

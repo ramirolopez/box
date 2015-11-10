@@ -26,6 +26,6 @@ export function LOOKUP() {
 
     }
 
-    return ERROR.na;
+    return error.na;
 
 }

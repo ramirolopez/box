@@ -1,11 +1,11 @@
 import test from 'tape';
-import {isfunc} from '../src/ISFUNCTION';
+import {ISFUNCTION} from '../src/ISFUNCTION';
 
-test('Function check', function(t) {
+test('ISFUNCTION', function(t) {
   t.plan(5);
-  t.equal( isfunc(setInterval), true);
-  t.equal( isfunc(function() {}), true);
-  t.equal( isfunc(5), false);
-  t.equal( isfunc('invalid'), false);
-  t.equal( isfunc(new Date()), false);
+  t.equal( ISFUNCTION(setInterval), true);
+  t.equal( ISFUNCTION(function() {}), true);
+  t.equal( ISFUNCTION(5), false);
+  t.equal( ISFUNCTION('invalid'), false);
+  t.equal( ISFUNCTION(new Date()), false);
 });

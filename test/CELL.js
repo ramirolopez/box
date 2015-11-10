@@ -1,14 +1,14 @@
 import test from 'tape';
-import {cell} from '../src/CELL';
+import {CELL} from '../src/CELL';
 
-var c = new cell(0);
 
-test('cell', function(t) {
+test('CELL', function(t) {
   t.plan(3);
 
-  t.equal( c.index, 0 );
-  c = new cell(100);
-  t.equal( c.index, 100 );
-  t.throws( new cell('foo') );
+  var c = CELL(0);
+  t.equal( c.topLeft(), 0 );
+  c = CELL(100);
+  t.equal( c.topLeft(), 100 );
+  t.throws( function(){  CELL('foo') } );
 
 });

@@ -1,4 +1,4 @@
-import {ERROR} from './ERROR.;
+import error from './ERROR';
 
 export function BIN2DEC(value) {
     var valueAsString;
@@ -8,10 +8,10 @@ export function BIN2DEC(value) {
     } else if (typeof value !== "undefined") {
         valueAsString = value.toString();
     } else {
-        return ERROR.NA;
+        return error.NA;
     }
 
-    if (valueAsString.length > 10) return ERROR.NUM;
+    if (valueAsString.length > 10) return error.NUM;
 
     // we subtract 512 when the leading number is 0.
     if (valueAsString.length === 10 && valueAsString[0] === '1') {

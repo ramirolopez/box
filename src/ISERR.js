@@ -1,10 +1,14 @@
+import error from './ERROR';
 
-import {ERROR} from './ERROR.;
-
-export function(value) {
+export function ISERR(value) {
   return (
-    value !== ERROR.na && (
-      value.constructor.name === 'ERROR. ||
-      typeof(value) === 'number' && (Number.isNaN(value) || !isFinite(value)))
-    );
-  }
+    (
+      value !== error.na &&
+      value.constructor.name === 'Error'
+    ) || (
+      typeof value === 'number' && (
+        Number.isNaN(value) || !Number.isFinite(value)
+      )
+    )
+  );
+}

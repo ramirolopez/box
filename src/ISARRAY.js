@@ -1,4 +1,4 @@
 
-export function isArray(arr) {
+export function ISARRAY(arr) {
     return Object.prototype.toString.call( arr ) === '[object Array]';
 }

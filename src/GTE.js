@@ -5,7 +5,7 @@ export function GT(a,b) {
       bIsRange = b.constructor.name === 'RANGE';
 
   if ( aIsRange && bIsRange  ) {
-    return ERROR.na;
+    return error.na;
   } else if ( aIsRange ) {
     return a.data().map( (d) => d >= b ); 
   } else if (bIsRange) {

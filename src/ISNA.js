@@ -1,6 +1,6 @@
 
-import ERROR.from './ERROR.;
+import error.from './ERROR';
 
 export function isNA(value) {
-       return value === ERROR.na;
+       return value === error.na;
 }

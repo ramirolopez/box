@@ -1,9 +1,9 @@
 import test from 'tape'
-import ne from '../src/NE'
+import {NE} from '../src/NE'
 
-test('is should test for not equal', (t) => {
-  t.plan(3)
-  t.equal( ne(1, 0), true)
-  t.equal( ne(1, 1), false)
-  t.equal( ne('FOO', 'foo'), false)
+test('NE : is should test for not equal', function(t) {
+  t.plan(3);
+  t.equal( NE(1, 0), true);
+  t.equal( NE(1, 1), false);
+  t.equal( NE('FOO', 'foo'), false);
 });

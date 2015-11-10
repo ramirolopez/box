@@ -1,10 +1,13 @@
 import test from 'tape';
-import {Range} from '../src/RANGE';
-import {Cell} from '../src/CELL';
-import {isref} from '../src/ISREF';
+import {RANGE} from '../src/RANGE';
+import {CELL} from '../src/CELL';
+import {ISREF} from '../src/ISREF';
 
-test('isref', function(t) {
-  t.plan(2)
-  t.equal( isref( new Range(0, 1) ) );
-  t.equal( isref( new Cell(1) ) );
+test('ISREF', function(t) {
+  t.plan(5)
+  t.equal( ISREF( RANGE(0, 1) ), true );
+  t.equal( ISREF( CELL(1) ), true );
+  t.equal( ISREF( [] ), false );
+  t.equal( ISREF( '' ), false );
+  t.equal( ISREF( {} ), false );
 });

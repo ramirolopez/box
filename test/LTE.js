@@ -1,18 +1,15 @@
 import test from 'tape';
-import {range} from '../src/RANGE';
 import {LTE} from '../src/LTE';
 
-test('Should compare two values and return true or false', function(t) {
+test('LTE : Should compare two values and return true or false', function(t) {
 
-  var r = new range( 0, 10);
 
-  t.plan(4)
-
+  t.plan(4);
   t.equal( LTE(2, 4), true );
   t.equal( LTE(200, 800), true );
   t.equal( LTE(20000000, 40000000), true );
 
-  t.deepEqual( LTE( r, 5 ), [
+  t.deepEqual( LTE( [0,1,2,3,4,5,6,7,8,9,10], 5 ), [
     true,
     true,
     true,

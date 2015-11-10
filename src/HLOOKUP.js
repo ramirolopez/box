@@ -17,5 +17,5 @@ export function HLOOKUP(needle, table, index, exactmatch) {
         }
     }             
 
-    return ERROR.na;
+    return error.na;
 }

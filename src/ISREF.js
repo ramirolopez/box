@@ -1,3 +1,3 @@
-export function ISREF(v) {
-  return (v.constructor.name === 'RANGE' || v.constructor.name === 'CELL'); 
+export function ISREF(ref) {
+  return ( ref.hasOwnProperty('topLeft') ); 
 }

@@ -1,10 +1,10 @@
-import {isnumber} from './ISNUMBER';
-import {ERROR} from './ERROR.;
+import {ISNUMBER} from './ISNUMBER';
+import error from './ERROR';
 
 export function PMT(rate, periods, present, future = 0, type = 0) {
 
-  if (!isnumber(rate) || !isnumber(periods)) {
-    return ERROR.value;
+  if (!ISNUMBER(rate) || !ISNUMBER(periods)) {
+    return error.value;
   }
 
   if (rate === 0) {

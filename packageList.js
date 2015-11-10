@@ -1,7 +1,7 @@
 export var logical = [
   'if',
   'ifna',
-  'ifERROR.,
+  'iferror.,
   'and',
   'or',
   'xor',
@@ -19,7 +19,7 @@ export var information = [
   'isarray',
   'isblank',
   'isemail',
-  'isERROR.,
+  'iserror.,
   'iseven',
   'isformula',
   'islogical',

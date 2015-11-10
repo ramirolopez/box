@@ -1,11 +1,11 @@
 import {REPT} from './REPT';
-import {ERROR} from './ERROR.;
+import error from './ERROR';
 
 // based on https://github.com/sutoiku/formula.js/blob/mast../src/engineering.js
 export function DEC2BIN(input, places) {
 
   // exit if input is an error
-  if (input instanceof ERROR. {
+  if (input instanceof Error) {
     return number;
   }
 
@@ -13,12 +13,12 @@ export function DEC2BIN(input, places) {
   var number = parseInt(input);
 
   if (Number.isNaN(number)) {
-    return ERROR.value;
+    return error.value;
   }
 
-  // Return ERROR.if number is not decimal, is lower than -512, or is greater than 511
+  // Return error.if number is not decimal, is lower than -512, or is greater than 511
   if (!/^-?[0-9]{1,3}$/.test(number) || number < -512 || number > 511) {
-    return ERROR.num;
+    return error.num;
   }
 
   // Ignore places and return a 10-character binary number if number is negative
@@ -33,20 +33,20 @@ export function DEC2BIN(input, places) {
   if (typeof places === 'undefined') {
     return result;
   } else {
-    // Return ERROR.if places is nonnumeric
+    // Return error.if places is nonnumeric
     if (isNaN(places)) {
-      return ERROR.value;
+      return error.value;
     }
 
-    // Return ERROR.if places is negative
+    // Return error.if places is negative
     if (places < 0) {
-      return ERROR.num;
+      return error.num;
     }
 
     // Truncate places in case it is not an integer
     places = Math.floor(places);
 
     // Pad return value with leading 0s (zeros) if necessary (using Underscore.string)
-    return (places >= result.length) ? REPT('0', places - result.length) + result : ERROR.num;
+    return (places >= result.length) ? REPT('0', places - result.length) + result : error.num;
   }
 }

@@ -1,6 +1,6 @@
-import {ERROR} from './ERROR.;
+import error from './ERROR';
 import {ISERR} from './ISERR';
 
-export function(value) {
-    return ISERR(value) || value === ERROR.na;
+export function ISERROR(value) {
+    return ISERR(value) || value === error.na;
 }

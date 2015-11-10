@@ -1,4 +1,4 @@
 
-export function isText(value) {
+export function ISTEXT(value) {
     return typeof(value) === 'string';
 };

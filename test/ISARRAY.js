@@ -1,9 +1,9 @@
 import test from 'tape'
-import {isArray} from './ISARRAY'
+import {ISARRAY} from '../src/ISARRAY'
 
-test( 'it should identify an array', (t) => {
+test( 'ISARRAY : it should identify an array', (t) => {
   t.plan(3)
-  t.equal( isArray( [] ), true )
-  t.equal( isArray( {} ), false )
-  t.equal( isArray( 'string' ), false )
+  t.equal( ISARRAY( [] ), true )
+  t.equal( ISARRAY( {} ), false )
+  t.equal( ISARRAY( 'string' ), false )
 })

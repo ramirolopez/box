@@ -1,5 +1,5 @@
 import {ISNUMBER} from './ISNUMBER';
-import {ISERROR. from './ISERROR.;
+import {ISERROR} from './ISERROR';
 import {SERIAL} from './SERIAL';
 
 export function N(value) {
@@ -15,7 +15,7 @@ export function N(value) {
   if (value === false) {
     return 0;
   }
-  if (ISERROR.value)) {
+  if (ISERROR(value)) {
     return value;
   }
   return 0;

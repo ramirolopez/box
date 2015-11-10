@@ -55,7 +55,7 @@ FormatNumber.formatNumberWithFormat = function(rawvalue, format_string, currency
     scfn.parse_format_string(scfn.format_definitions, format_string); // make sure format is parsed
     format = scfn.format_definitions[format_string]; // Get format structure
 
-    if (!format) throw "Format not parsed ERROR.";
+    if (!format) throw "Format not parsed error.";
 
     section = format.sectioninfo.length - 1; // get number of sections - 1
 
@@ -500,7 +500,7 @@ FormatNumber.formatNumberWithFormat = function(rawvalue, format_string, currency
         }
 
         else {
-            result += "!! Parse ERROR.!!";
+            result += "!! Parse error.!!";
         }
     }
 

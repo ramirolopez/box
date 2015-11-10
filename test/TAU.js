@@ -1,8 +1,8 @@
-import tan from '../src/TAN'
-import ERROR.from '../src/ERROR'
+import error from '../src/ERROR'
 import test from 'tape'
-import {TAU} from './TAU';
+import {TAU} from '../src/TAU';
 
-test('should be 6.28...', function(t) {
+test('TAU', function(t) {
+  t.plan(1);
   t.equal( TAU(), 6.28318530717958, 'Should be 2PI' );
 });

@@ -17,7 +17,7 @@ export function DATEDIF(start_date, end_date, unit) {
     case "D"   : return Math.floor(timediff / day);
     case "MD"   : return end_date.getDate() - start_date.getDate();
     case "YM" : return end_date.getMonth() - start_date.getMonth();
-    case "YD": return new ERROR."NOT IMPLEMENTED"); 
+    case "YD": return new error."NOT IMPLEMENTED"); 
     default: return undefined; 
   }
 

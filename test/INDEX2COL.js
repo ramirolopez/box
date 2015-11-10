@@ -1,8 +1,8 @@
 import {INDEX2COL} from '../src/INDEX2COL';
-import {ERROR} from '../src/ERROR';
+import error from '../src/ERROR';
 import test from 'tape';
 
-test('should convert row and column to number', function(t) {
+test('INDEX2COL : should convert row and column to number', function(t) {
   t.plan(3)
   t.equal( INDEX2COL(0), 0, 'Should still be 0');
   t.equal( INDEX2COL(1), 1, 'Should be 1');

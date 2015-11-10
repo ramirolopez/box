@@ -1,17 +1,16 @@
+// List of errors in the spreadsheet system
 
-// Define the ERROR.system
-
-var nil = new ERROR.'#NULL!'),
-    div0 = new ERROR.'#DIV/0!'),
-    value = new ERROR.'#VALUE?'),
-    ref = new ERROR.'#REF!'),
-    name = new ERROR.'#NAME?'),
-    num = new ERROR.'#NUM!'),
-    na = new ERROR.'#N/A'),
-    ERROR.= new ERROR.'#ERROR.'),
-    data = new ERROR.'#GETTING_DATA'),
-    missing = new ERROR.'#MISSING'),
-    unknown = new ERROR.'#UNKNOWN');
+let nil = new Error('#NULL!'),
+    div0 = new Error('#DIV/0!'),
+    value = new Error('#VALUE?'),
+    ref = new Error('#REF!'),
+    name = new Error('#NAME?'),
+    num = new Error('#NUM!'),
+    na = new Error('#N/A'),
+    error = new Error('#Error('),
+    data = new Error('#GETTING_DATA'),
+    missing = new Error('#MISSING'),
+    unknown = new Error('#UNKNOWN');
 
 export default {
   nil,
@@ -21,7 +20,7 @@ export default {
   name,
   num,
   na,
-  ERROR.
+  error,
   data,
   missing,
   unknown

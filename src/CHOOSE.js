@@ -1,17 +1,17 @@
-import {ERROR} from './ERROR.;
+import error from './ERROR';
 
 export function CHOOSE() {
   if (arguments.length < 2) {
-    return ERROR.na;
+    return error.na;
   }
 
   var index = arguments[0];
   if (index < 1 || index > 254) {
-    return ERROR.value;
+    return error.value;
   }
 
   if (arguments.length < index + 1) {
-    return ERROR.value;
+    return error.value;
   }
 
   return arguments[index];

@@ -1,20 +1,20 @@
-import {isERROR. from '../src/ISERROR.;
-import {ERROR} from '../src/ERROR';
+import {ISERROR} from '../src/ISERROR';
+import error from '../src/ERROR';
 import test from 'tape';
 
-test('should identify ERROR.; excluding NA', function(t) {
+test('ISERROR', function(t) {
   t.plan(13)
-  t.equal( isERROR.0), false, '0 is not an ERROR.);
-  t.equal( isERROR.1), false, '1 is not an ERROR.);
-  t.equal( isERROR.'Hello'), false, '"Hello" is not an ERROR.);
-  t.equal( isERROR.ERROR.nil), true, 'Should be ERROR.);
-  t.equal( isERROR.ERROR.value), true, 'Should be ERROR.);
-  t.equal( isERROR.ERROR.ref), true, 'Should be ERROR.);
-  t.equal( isERROR.ERROR.name), true, 'Should be ERROR.);
-  t.equal( isERROR.ERROR.num), true, 'Should be ERROR.);
-  t.equal( isERROR.ERROR.na), true, 'Should be ERROR.);
-  t.equal( isERROR.ERROR.ERROR., true, 'Should be ERROR.);
-  t.equal( isERROR.ERROR.data), true, 'Should be ERROR.);
-  t.equal( isERROR.ERROR.missing), true, 'Should be ERROR.);
-  t.equal( isERROR.ERROR.unknown), true, 'Should be ERROR.);
+  t.equal( ISERROR(0), false, '0 is not an error');
+  t.equal( ISERROR(1), false, '1 is not an error');
+  t.equal( ISERROR('Hello'), false, '"Hello" is not an error');
+  t.equal( ISERROR(error.nil), true, 'Should be error');
+  t.equal( ISERROR(error.value), true, 'Should be error');
+  t.equal( ISERROR(error.ref), true, 'Should be error');
+  t.equal( ISERROR(error.name), true, 'Should be error');
+  t.equal( ISERROR(error.num), true, 'Should be error');
+  t.equal( ISERROR(error.na), true, 'Should be error');
+  t.equal( ISERROR(error.error), true, 'Should be error');
+  t.equal( ISERROR(error.data), true, 'Should be error');
+  t.equal( ISERROR(error.missing), true, 'Should be error');
+  t.equal( ISERROR(error.unknown), true, 'Should be error');
 });

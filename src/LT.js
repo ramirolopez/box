@@ -1,15 +1,16 @@
 import {RANGE} from './RANGE';
+import {ISARRAY} from './ISARRAY';
+import {ISRANGE} from './ISRANGE';
 
 export function LT(a,b) {
-  var aIsRange = (a.constructor.name === 'RANGE'),
-      bIsRange = (b.constructor.name === 'RANGE');
-
-  if ( aIsRange && bIsRange  ) {
-    return ERROR.na;
-  } else if ( aIsRange ) {
-    return a.data().map( (d) => d < b ); 
-  } else if (bIsRange) {
-    return b.data().map( (d) => d < a ); 
+  if ( ISRANGE(a) && ISRANGE(b) ) {
+    return error.na;
+  } else if ( ISARRAY(a) && ISARRAY(b) ) {
+    return error.na;
+  } else if ( ISRANGE(a) || ISARRAY(a) ) {
+    return a.map( (d) => d < b );
+  } else if ( ISRANGE(b) || ISARRAY(b) ) {
+    return b.map( (d) => d < a );
   } else {
     return a < b;
   }
