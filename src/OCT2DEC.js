@@ -1,4 +1,4 @@
-import error.from './ERROR';
+import error from './ERROR';
 
 export function OCT2DEC(octalNumber) {
   // Credits: Based on implementation found in https://gist.github.com/ghalimi/4525876#file-oct2dec-js
